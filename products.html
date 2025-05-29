@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>freshpicks | Organic Fruits, Vegetables & Fresh Juices</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-text">
+                <i class="fas fa-truck"></i> Free delivery on orders over ₹50
+            </div>
+            <div class="top-bar-links">
+                <a href="#"><i class="fas fa-phone"></i> +91 987 987 9087</a>
+                <a href="#"><i class="fas fa-envelope"></i> info@freshpicks.com</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header>
+        <div class="container">
+            <div class="main-header">
+                <a href="index.html" class="logo">
+                    <img src="logo.png" alt="logo" class="logo-new"> 
+                </a>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Search for fruits, vegetables, juices...">
+                    <button id="search-btn"><i class="fas fa-search"></i></button>
+                    <div class="search-results" id="search-results"></div>
+                </div>
+                
+                <div class="header-icons">
+                    <a href="#"><i class="fas fa-user"></i></a>
+                    <a href="#"><i class="fas fa-heart"></i></a>
+                    <a href="#">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">3</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li>
+                    <a href="#">Categories <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Fresh Fruits</a></li>
+                        <li><a href="#">Organic Vegetables</a></li>
+                        <li><a href="#">Fresh Juices</a></li>
+                        <li><a href="#">Dairy Products</a></li>
+                        <li><a href="#">Herbs & Spices</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Filter and Sort Section -->
+    <section class="freshpicks-filter-section">
+        <div class="container">
+            <div class="freshpicks-filter-container">
+                <div class="freshpicks-filter-group">
+                    <span class="freshpicks-filter-label">Category:</span>
+                    <select class="freshpicks-filter-select">
+                        <option value="all">All</option>
+                        <option value="fruits">Fruits</option>
+                        <option value="vegetables">Vegetables</option>
+                        <option value="juices">Fresh Juices</option>
+                    </select>
+                </div>
+                <div class="freshpicks-filter-group">
+                    <span class="freshpicks-filter-label">Price:</span>
+                    <select class="freshpicks-filter-select">
+                        <option value="all">All</option>
+                        <option value="under50">Under ₹50</option>
+                        <option value="50-100">₹50 - ₹100</option>
+                        <option value="100-200">₹100 - ₹200</option>
+                        <option value="over200">Over ₹200</option>
+                    </select>
+                </div>
+                <div class="freshpicks-filter-group">
+                    <span class="freshpicks-filter-label">Availability:</span>
+                    <select class="freshpicks-filter-select">
+                        <option value="all">All</option>
+                        <option value="in-stock">In Stock</option>
+                        <option value="out-of-stock">Out of Stock</option>
+                    </select>
+                </div>
+                <div class="freshpicks-filter-group freshpicks-sort-group">
+                    <span class="freshpicks-filter-label">Sort By:</span>
+                    <select class="freshpicks-filter-select">
+                        <option value="popular">Most Popular</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="rating">Customer Rating</option>
+                        <option value="newest">Newest Arrivals</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Grid -->
+    <section class="freshpicks-products">
+        <div class="container">
+            <div class="freshpicks-product-grid">
+                <!-- Product 1 -->
+                <div class="freshpicks-product-card">
+                    <div class="freshpicks-product-img-container">
+                        <span class="freshpicks-product-badge">Seasonal</span>
+                        <img src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Mango" class="freshpicks-product-img">
+                    </div>
+                    <div class="freshpicks-product-content">
+                        <span class="freshpicks-product-category">Fruits</span>
+                        <h3 class="freshpicks-product-title">Alphonso Mango</h3>
+                        <p class="freshpicks-product-description">Premium quality Alphonso mangoes from Ratnagiri, sweet and fiberless</p>
+                        <div class="freshpicks-product-rating">
+                            <span class="freshpicks-rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </span>
+                            <span class="freshpicks-rating-count">(128)</span>
+                        </div>
+                        <div class="freshpicks-product-price">
+                            <span class="freshpicks-product-current-price">₹450/kg</span>
+                            <span class="freshpicks-product-original-price">₹600/kg</span>
+                            <span class="freshpicks-product-discount">25% OFF</span>
+                        </div>
+                        <div class="freshpicks-product-actions">
+                            <button class="freshpicks-btn freshpicks-btn-outline">
+                                <i class="fas fa-shopping-cart"></i> Add
+                            </button>
+                            <button class="freshpicks-btn freshpicks-btn-primary">
+                                Buy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="freshpicks-product-card">
+                    <div class="freshpicks-product-img-container">
+                        <span class="freshpicks-product-badge">Organic</span>
+                        <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Tomato" class="freshpicks-product-img">
+                    </div>
+                    <div class="freshpicks-product-content">
+                        <span class="freshpicks-product-category">Vegetables</span>
+                        <h3 class="freshpicks-product-title">Organic Tomatoes</h3>
+                        <p class="freshpicks-product-description">Fresh organic tomatoes grown without pesticides</p>
+                        <div class="freshpicks-product-rating">
+                            <span class="freshpicks-rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </span>
+                            <span class="freshpicks-rating-count">(89)</span>
+                        </div>
+                        <div class="freshpicks-product-price">
+                            <span class="freshpicks-product-current-price">₹60/kg</span>
+                            <span class="freshpicks-product-original-price">₹80/kg</span>
+                            <span class="freshpicks-product-discount">25% OFF</span>
+                        </div>
+                        <div class="freshpicks-product-actions">
+                            <button class="freshpicks-btn freshpicks-btn-outline">
+                                <i class="fas fa-shopping-cart"></i> Add
+                            </button>
+                            <button class="freshpicks-btn freshpicks-btn-primary">
+                                Buy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="freshpicks-product-card">
+                    <div class="freshpicks-product-img-container">
+                        <img src="https://images.unsplash.com/photo-1603569283847-aa295f0d016a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Orange Juice" class="freshpicks-product-img">
+                    </div>
+                    <div class="freshpicks-product-content">
+                        <span class="freshpicks-product-category">Fresh Juices</span>
+                        <h3 class="freshpicks-product-title">Cold Pressed Orange Juice</h3>
+                        <p class="freshpicks-product-description">100% pure orange juice with no added sugar or preservatives</p>
+                        <div class="freshpicks-product-rating">
+                            <span class="freshpicks-rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <span class="freshpicks-rating-count">(215)</span>
+                        </div>
+                        <div class="freshpicks-product-price">
+                            <span class="freshpicks-product-current-price">₹120</span>
+                            <span class="freshpicks-product-original-price">₹150</span>
+                            <span class="freshpicks-product-discount">20% OFF</span>
+                        </div>
+                        <div class="freshpicks-product-actions">
+                            <button class="freshpicks-btn freshpicks-btn-outline">
+                                <i class="fas fa-shopping-cart"></i> Add
+                            </button>
+                            <button class="freshpicks-btn freshpicks-btn-primary">
+                                Buy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="freshpicks-product-card">
+                    <div class="freshpicks-product-img-container">
+                        <span class="freshpicks-product-badge">New</span>
+                        <img src="https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Pomegranate" class="freshpicks-product-img">
+                    </div>
+                    <div class="freshpicks-product-content">
+                        <span class="freshpicks-product-category">Fruits</span>
+                        <h3 class="freshpicks-product-title">Pomegranate</h3>
+                        <p class="freshpicks-product-description">Fresh pomegranates with deep red arils, rich in antioxidants</p>
+                        <div class="freshpicks-product-rating">
+                            <span class="freshpicks-rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </span>
+                            <span class="freshpicks-rating-count">(76)</span>
+                        </div>
+                        <div class="freshpicks-product-price">
+                            <span class="freshpicks-product-current-price">₹180/kg</span>
+                            <span class="freshpicks-product-original-price">₹220/kg</span>
+                            <span class="freshpicks-product-discount">18% OFF</span>
+                        </div>
+                        <div class="freshpicks-product-actions">
+                            <button class="freshpicks-btn freshpicks-btn-outline">
+                                <i class="fas fa-shopping-cart"></i> Add
+                            </button>
+                            <button class="freshpicks-btn freshpicks-btn-primary">
+                                Buy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="freshpicks-product-card">
+                    <div class="freshpicks-product-img-container">
+                        <span class="freshpicks-product-badge">Bestseller</span>
+                        <img src="https://images.unsplash.com/photo-1603048719539-6d5a1f8d1b8e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Carrot" class="freshpicks-product-img">
+                    </div>
+                    <div class="freshpicks-product-content">
+                        <span class="freshpicks-product-category">Vegetables</span>
+                        <h3 class="freshpicks-product-title">Fresh Carrots</h3>
+                        <p class="freshpicks-product-description">Sweet and crunchy carrots, rich in beta-carotene</p>
+                        <div class="freshpicks-product-rating">
+                            <span class="freshpicks-rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </span>
+                            <span class="freshpicks-rating-count">(142)</span>
+                        </div>
+                        <div class="freshpicks-product-price">
+                            <span class="freshpicks-product-current-price">₹40/kg</span>
+                            <span class="freshpicks-product-original-price">₹50/kg</span>
+                            <span class="freshpicks-product-discount">20% OFF</span>
+                        </div>
+                        <div class="freshpicks-product-actions">
+                            <button class="freshpicks-btn freshpicks-btn-outline">
+                                <i class="fas fa-shopping-cart"></i> Add
+                            </button>
+                            <button class="freshpicks-btn freshpicks-btn-primary">
+                                Buy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="freshpicks-product-card">
+                    <div class="freshpicks-product-img-container">
+                        <img src="https://images.unsplash.com/photo-1603569283847-aa295f0d016a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Sugarcane Juice" class="freshpicks-product-img">
+                    </div>
+                    <div class="freshpicks-product-content">
+                        <span class="freshpicks-product-category">Fresh Juices</span>
+                        <h3 class="freshpicks-product-title">Cold Pressed Sugarcane Juice</h3>
+                        <p class="freshpicks-product-description">Natural energy drink with ginger and lemon, no additives</p>
+                        <div class="freshpicks-product-rating">
+                            <span class="freshpicks-rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </span>
+                            <span class="freshpicks-rating-count">(93)</span>
+                        </div>
+                        <div class="freshpicks-product-price">
+                            <span class="freshpicks-product-current-price">₹90</span>
+                            <span class="freshpicks-product-original-price">₹120</span>
+                            <span class="freshpicks-product-discount">25% OFF</span>
+                        </div>
+                        <div class="freshpicks-product-actions">
+                            <button class="freshpicks-btn freshpicks-btn-outline">
+                                <i class="fas fa-shopping-cart"></i> Add
+                            </button>
+                            <button class="freshpicks-btn freshpicks-btn-primary">
+                                Buy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="freshpicks-product-card">
+                    <div class="freshpicks-product-img-container">
+                        <span class="freshpicks-product-badge">Organic</span>
+                        <img src="https://images.unsplash.com/photo-1550258987-190a2d41a8ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Banana" class="freshpicks-product-img">
+                    </div>
+                    <div class="freshpicks-product-content">
+                        <span class="freshpicks-product-category">Fruits</span>
+                        <h3 class="freshpicks-product-title">Organic Bananas</h3>
+                        <p class="freshpicks-product-description">Naturally ripened, rich in potassium and fiber</p>
+                        <div class="freshpicks-product-rating">
+                            <span class="freshpicks-rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </span>
+                            <span class="freshpicks-rating-count">(167)</span>
+                        </div>
+                        <div class="freshpicks-product-price">
+                            <span class="freshpicks-product-current-price">₹50/dozen</span>
+                            <span class="freshpicks-product-original-price">₹60/dozen</span>
+                            <span class="freshpicks-product-discount">17% OFF</span>
+                        </div>
+                        <div class="freshpicks-product-actions">
+                            <button class="freshpicks-btn freshpicks-btn-outline">
+                                <i class="fas fa-shopping-cart"></i> Add
+                            </button>
+                            <button class="freshpicks-btn freshpicks-btn-secondary">
+                                <i class="fas fa-boxes"></i> Bulk Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="freshpicks-product-card">
+                    <div class="freshpicks-product-img-container">
+                        <img src="https://images.unsplash.com/photo-1594282417923-6d1a0c1ffe0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Spinach" class="freshpicks-product-img">
+                    </div>
+                    <div class="freshpicks-product-content">
+                        <span class="freshpicks-product-category">Vegetables</span>
+                        <h3 class="freshpicks-product-title">Fresh Spinach</h3>
+                        <p class="freshpicks-product-description">Tender spinach leaves, packed with iron and vitamins</p>
+                        <div class="freshpicks-product-rating">
+                            <span class="freshpicks-rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </span>
+                            <span class="freshpicks-rating-count">(78)</span>
+                        </div>
+                        <div class="freshpicks-product-price">
+                            <span class="freshpicks-product-current-price">₹30/bunch</span>
+                            <span class="freshpicks-product-original-price">₹40/bunch</span>
+                            <span class="freshpicks-product-discount">25% OFF</span>
+                        </div>
+                        <div class="freshpicks-product-actions">
+                            <button class="freshpicks-btn freshpicks-btn-outline">
+                                <i class="fas fa-shopping-cart"></i> Add
+                            </button>
+                            <button class="freshpicks-btn freshpicks-btn-primary">
+                                Buy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="freshpicks-footer">
+        <div class="container">
+            <div class="freshpicks-footer-grid">
+                <div>
+                    <h3 class="freshpicks-footer-heading">FreshPicks</h3>
+                    <p style="color: #bbb; margin-bottom: 15px;">Your one-stop shop for fresh fruits, vegetables and juices delivered to your doorstep.</p>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="#" style="color: #bbb; font-size: 20px;"><i class="fab fa-facebook"></i></a>
+                        <a href="#" style="color: #bbb; font-size: 20px;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="color: #bbb; font-size: 20px;"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="freshpicks-footer-heading">Quick Links</h3>
+                    <ul class="freshpicks-footer-links">
+                        <li class="freshpicks-footer-link"><a href="#">Home</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">Shop</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">About Us</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">Contact</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="freshpicks-footer-heading">Categories</h3>
+                    <ul class="freshpicks-footer-links">
+                        <li class="freshpicks-footer-link"><a href="#">Fruits</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">Vegetables</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">Fresh Juices</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">Organic Products</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">Seasonal Specials</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="freshpicks-footer-heading">Contact Us</h3>
+                    <ul class="freshpicks-footer-links">
+                        <li class="freshpicks-footer-link"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> 123 Fresh Lane, Mumbai</li>
+                        <li class="freshpicks-footer-link"><i class="fas fa-phone" style="margin-right: 8px;"></i> +91 9876543210</li>
+                        <li class="freshpicks-footer-link"><i class="fas fa-envelope" style="margin-right: 8px;"></i> hello@freshpicks.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="freshpicks-footer-bottom">
+                <p>&copy; 2023 FreshPicks. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

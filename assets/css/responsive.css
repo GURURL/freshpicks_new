@@ -1,0 +1,118 @@
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar {
+                display: none;
+            }
+            
+            .main-header {
+                flex-wrap: wrap;
+            }
+            
+            .logo {
+                order: 1;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                order: 2;
+            }
+            
+            .search-bar {
+                order: 3;
+                margin: 20px 0 0;
+                width: 100%;
+            }
+            
+            .header-icons {
+                order: 4;
+                margin-left: auto;
+            }
+            
+            nav {
+                position: fixed;
+                top: 90px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 90px);
+                transition: var(--transition);
+                z-index: 99;
+            }
+            
+            nav.active {
+                left: 0;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+            }
+            
+            .dropdown-menu {
+                position: static;
+                width: 100%;
+                opacity: 1;
+                visibility: visible;
+                display: none;
+            }
+            
+            .nav-links li:hover .dropdown-menu {
+                display: block;
+            }
+            
+            .hero {
+                height: 400px;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-form input {
+                border-radius: 30px;
+                margin-bottom: 10px;
+            }
+            
+            .newsletter-form button {
+                border-radius: 30px;
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .btn {
+                display: block;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+            }
+            
+            .section-title h2 {
+                font-size: 28px;
+            }
+            .search-bar{
+            display: none;
+        }
+        .header-icons{
+            display: none;
+        }
+        }

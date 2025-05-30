@@ -92,8 +92,8 @@
                     <div class="mb-3">
                         <input type="range" class="form-range" id="priceRange" min="0" max="100" step="5">
                         <div class="d-flex justify-content-between">
-                            <span>$0</span>
-                            <span>$100</span>
+                            <span>₹0</span>
+                            <span>₹100</span>
                         </div>
                     </div>
                 </div>
@@ -382,8 +382,8 @@
                             </div>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div>
-                                    <span class="product-price">$${product.price.toFixed(2)}</span>
-                                    ${product.oldPrice ? `<span class="product-old-price">$${product.oldPrice.toFixed(2)}</span>` : ''}
+                                    <span class="product-price">₹${product.price.toFixed(2)}</span>
+                                    ${product.oldPrice ? `<span class="product-old-price">₹${product.oldPrice.toFixed(2)}</span>` : ''}
                                 </div>
                                 ${product.stock > 0 ? `<span class="text-success"><small>In Stock (${product.stock})</small></span>` : '<span class="text-danger"><small>Out of Stock</small></span>'}
                             </div>

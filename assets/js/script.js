@@ -573,3 +573,94 @@ function showToast(message) {
         toast.remove();
     }, 3000);
 }
+
+
+
+
+
+     document.addEventListener('DOMContentLoaded', function() {
+    // Carousel navigation
+    const prevBtn = document.querySelector('.prev-cat');
+    const nextBtn = document.querySelector('.next-cat');
+    const carousel = document.querySelector('.categories-carousel .row');
+    
+    let currentIndex = 0;
+    const cards = document.querySelectorAll('.category-card');
+    const cardCount = cards.length;
+    
+    // Set initial active card
+    setActiveCard(currentIndex);
+    
+    // Previous button click
+    prevBtn.addEventListener('click', function() {
+        currentIndex = (currentIndex - 1 + cardCount) % cardCount;
+        setActiveCard(currentIndex);
+        scrollToCard(currentIndex);
+    });
+    
+    // Next button click
+    nextBtn.addEventListener('click', function() {
+        currentIndex = (currentIndex + 1) % cardCount;
+        setActiveCard(currentIndex);
+        scrollToCard(currentIndex);
+    });
+    
+    // Set active card
+    function setActiveCard(index) {
+        cards.forEach((card, i) => {
+            if (i === index) {
+                card.classList.add('active');
+            } else {
+                card.classList.remove('active');
+            }
+        });
+    }
+    
+    // Smooth scroll to card
+    function scrollToCard(index) {
+        const card = cards[index];
+        card.scrollIntoView({
+            behavior: 'smooth',
+            block: 'nearest',
+            inline: 'center'
+        });
+    }
+    
+    // Hover effects for cards
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px)';
+            this.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.1)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = '';
+            this.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.05)';
+        });
+    });
+    
+    // Touch swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    carousel.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+    }, false);
+    
+    carousel.addEventListener('touchend', function(e) {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, false);
+    
+    function handleSwipe() {
+        if (touchEndX < touchStartX) {
+            // Swipe left - next
+            currentIndex = (currentIndex + 1) % cardCount;
+        } else if (touchEndX > touchStartX) {
+            // Swipe right - prev
+            currentIndex = (currentIndex - 1 + cardCount) % cardCount;
+        }
+        setActiveCard(currentIndex);
+        scrollToCard(currentIndex);
+    }
+});

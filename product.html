@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>freshpicks | Organic Fruits, Vegetables & Fresh Juices</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+     <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-text">
+                <i class="fas fa-truck"></i> Free delivery on orders over ₹50
+            </div>
+            <div class="top-bar-links">
+                <a href="#"><i class="fas fa-phone"></i> +91 987 987 9087</a>
+                <a href="#"><i class="fas fa-envelope"></i> info@freshpicks.com</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header>
+        <div class="container">
+            <div class="main-header">
+                <a href="index.html" class="logo">
+                    <img src="logo.png" alt="logo" class="logo-new"> 
+                </a>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Search for fruits, vegetables, juices...">
+                    <button id="search-btn"><i class="fas fa-search"></i></button>
+                    <div class="search-results" id="search-results"></div>
+                </div>
+                
+                <div class="header-icons">
+                    <a href="#"><i class="fas fa-user"></i></a>
+                    <a href="#"><i class="fas fa-heart"></i></a>
+                    <a href="cart.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">3</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <ul class="nav-links mb-0">
+                <li><a href="index.html">Home</a></li>
+                 <li><a href="#">About Us</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- Main Content -->
+    <div class="container py-5">
+        <div class="row">
+            <!-- Filters Section -->
+            <div class="col-lg-3">
+                <div class="filter-section mb-4">
+                    <h5 class="filter-title">Categories</h5>
+                    <div class="mb-3">
+                        <span class="category-tag active" data-category="all">All Products</span>
+                        <span class="category-tag" data-category="fruits">Fruits</span>
+                        <span class="category-tag" data-category="vegetables">Vegetables</span>
+                        <span class="category-tag" data-category="juices">Fresh Juices</span>
+                        <span class="category-tag" data-category="organic">Organic</span>
+                    </div>
+                </div>
+
+                <div class="filter-section mb-4">
+                    <h5 class="filter-title">Price Range</h5>
+                    <div class="mb-3">
+                        <input type="range" class="form-range" id="priceRange" min="0" max="100" step="5">
+                        <div class="d-flex justify-content-between">
+                            <span>$0</span>
+                            <span>$100</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-section mb-4">
+                    <h5 class="filter-title">Availability</h5>
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" id="inStock" checked>
+                        <label class="form-check-label" for="inStock">In Stock</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="outOfStock">
+                        <label class="form-check-label" for="outOfStock">Out of Stock</label>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h5 class="filter-title">Dietary</h5>
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" id="organic">
+                        <label class="form-check-label" for="organic">Organic</label>
+                    </div>
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" id="glutenFree">
+                        <label class="form-check-label" for="glutenFree">Gluten Free</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="vegan">
+                        <label class="form-check-label" for="vegan">Vegan</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products Section -->
+            <div class="col-lg-9">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h4 class="mb-0">Fresh Products</h4>
+                    <div class="sort-dropdown">
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown">
+                                Sort by: Featured
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item active" href="#">Featured</a></li>
+                                <li><a class="dropdown-item" href="#">Price: Low to High</a></li>
+                                <li><a class="dropdown-item" href="#">Price: High to Low</a></li>
+                                <li><a class="dropdown-item" href="#">Newest</a></li>
+                                <li><a class="dropdown-item" href="#">Best Rating</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" id="productContainer">
+                    <!-- Product cards will be dynamically inserted here -->
+                </div>
+
+                <!-- Pagination -->
+                <div aria-label="Page" class="mt-5">
+                    <ul class="pagination justify-content-end">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Previous</a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Product Detail Modal -->
+    <div class="modal fade" id="productDetailModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productDetailModalLabel">Product Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="productDetailContent">
+                    <!-- Content will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Modern Footer -->
+    <!-- Footer -->
+    <footer class="freshpicks-footer">
+        <div class="container">
+            <div class="freshpicks-footer-grid">
+                <div>
+                    <h3 class="freshpicks-footer-heading">FreshPicks</h3>
+                    <p style="color: #bbb; margin-bottom: 15px;">Your one-stop shop for fresh fruits, vegetables and juices delivered to your doorstep.</p>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="#" style="color: #bbb; font-size: 20px;"><i class="fab fa-facebook"></i></a>
+                        <a href="#" style="color: #bbb; font-size: 20px;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="color: #bbb; font-size: 20px;"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="freshpicks-footer-heading">Quick Links</h3>
+                    <ul class="freshpicks-footer-links">
+                        <li class="freshpicks-footer-link"><a href="#">Home</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">Shop</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">About Us</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">Contact</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="freshpicks-footer-heading">Categories</h3>
+                    <ul class="freshpicks-footer-links">
+                        <li class="freshpicks-footer-link"><a href="#">Fruits</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">Vegetables</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">Fresh Juices</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">Organic Products</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">Seasonal Specials</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="freshpicks-footer-heading">Contact Us</h3>
+                    <ul class="freshpicks-footer-links">
+                        <li class="freshpicks-footer-link"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>123 Fresh Picks, Tamil Nadu</li>
+                        <li class="freshpicks-footer-link"><i class="fas fa-phone" style="margin-right: 8px;"></i> +91 9876543210</li>
+                        <li class="freshpicks-footer-link"><i class="fas fa-envelope" style="margin-right: 8px;"></i> hello@freshpicks.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="freshpicks-footer-bottom">
+                <p>&copy; 2023 FreshPicks. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+     <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+
+    
+    <script>
+        // Sample product data
+        const products = [
+            {
+                id: 1,
+                name: "Organic Apples",
+                category: "fruits",
+                price: 2.99,
+                oldPrice: 3.49,
+                image: "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                rating: 4.5,
+                stock: 10,
+                organic: true,
+                description: "Crisp and juicy organic apples grown without synthetic pesticides or fertilizers. Perfect for snacking or baking.",
+                benefits: "High in fiber, vitamin C, and antioxidants. Supports heart health and digestion."
+            },
+            {
+                id: 2,
+                name: "Fresh Carrots",
+                category: "vegetables",
+                price: 1.49,
+                oldPrice: 1.99,
+                image: "https://images.unsplash.com/photo-1447175008436-054170c2e979?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                rating: 4.2,
+                stock: 15,
+                organic: false,
+                description: "Sweet and crunchy carrots, perfect for salads, snacks, or cooking. Locally grown and freshly harvested.",
+                benefits: "Rich in beta-carotene, fiber, vitamin K1, and antioxidants. Good for eye health."
+            },
+            {
+                id: 3,
+                name: "Orange Juice",
+                category: "juices",
+                price: 4.99,
+                oldPrice: 5.49,
+                image: "assets/images/fruits.jpg",
+                rating: 4.7,
+                stock: 8,
+                organic: true,
+                description: "100% pure squeezed orange juice with no added sugars or preservatives. Packed with vitamin C.",
+                benefits: "Boosts immune system, improves skin health, and provides natural energy."
+            },
+            {
+                id: 4,
+                name: "Organic Spinach",
+                category: "vegetables",
+                price: 3.29,
+                oldPrice: 3.99,
+                image: "https://images.unsplash.com/photo-1576045057995-568f588f82fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                rating: 4.3,
+                stock: 12,
+                organic: true,
+                description: "Tender organic spinach leaves, perfect for salads, smoothies, or cooking. Grown with sustainable methods.",
+                benefits: "High in iron, calcium, magnesium, and vitamins A, C, and K. Supports bone health."
+            },
+            {
+                id: 5,
+                name: "Strawberries",
+                category: "fruits",
+                price: 3.99,
+                oldPrice: 4.49,
+                image: "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                rating: 4.8,
+                stock: 0,
+                organic: false,
+                description: "Sweet and juicy strawberries, perfect for desserts, smoothies, or fresh eating. Picked at peak ripeness.",
+                benefits: "Rich in antioxidants, vitamin C, manganese, and folate. May help regulate blood sugar."
+            },
+            {
+                id: 6,
+                name: "Green Juice",
+                category: "juices",
+                price: 5.49,
+                oldPrice: 5.99,
+                image: "https://images.unsplash.com/photo-1542843137-8791a6904d14?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                rating: 4.6,
+                stock: 7,
+                organic: true,
+                description: "Nutrient-packed green juice with kale, spinach, cucumber, apple, and lemon. Cold-pressed for maximum nutrition.",
+                benefits: "Detoxifying, alkalizing, and packed with vitamins, minerals, and chlorophyll."
+            },
+            {
+                id: 7,
+                name: "Organic Tomatoes",
+                category: "vegetables",
+                price: 2.79,
+                oldPrice: 3.29,
+                image: "assets/images/vegitables.jpg",
+                rating: 4.4,
+                stock: 14,
+                organic: true,
+                description: "Vine-ripened organic tomatoes with rich flavor and perfect texture. Great for salads, sauces, or sandwiches.",
+                benefits: "Excellent source of lycopene, vitamin C, potassium, and folate. Supports heart health."
+            },
+            {
+                id: 8,
+                name: "Bananas",
+                category: "fruits",
+                price: 0.99,
+                oldPrice: 1.29,
+                image: "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                rating: 4.1,
+                stock: 20,
+                organic: false,
+                description: "Naturally sweet bananas, a perfect energy-boosting snack. Rich in potassium and easy to digest.",
+                benefits: "High in potassium, vitamin B6, and fiber. Supports heart health and digestion."
+            }
+        ];
+
+        // Function to render products
+        function renderProducts(productsToRender) {
+            const productContainer = document.getElementById('productContainer');
+            productContainer.innerHTML = '';
+
+            if (productsToRender.length === 0) {
+                productContainer.innerHTML = '<div class="col-12 text-center py-5"><h5>No products found matching your criteria</h5><p>Try adjusting your filters</p></div>';
+                return;
+            }
+
+            productsToRender.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'col-md-6 col-lg-4 mb-4';
+                productCard.innerHTML = `
+                    <div class="card product-card h-100">
+                        ${product.stock === 0 ? '<span class="product-badge">Out of Stock</span>' : ''}
+                        ${product.organic ? '<span class="product-badge organic-badge">Organic</span>' : ''}
+                        <div class="overflow-hidden">
+                            <img src="${product.image}" class="card-img-top product-img" alt="${product.name}">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="product-title">${product.name}</h5>
+                            <p class="product-category text-capitalize">${product.category}</p>
+                            <div class="product-rating mb-2">
+                                ${generateRatingStars(product.rating)}
+                                <small class="text-muted ms-1">(${product.rating})</small>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="product-price">$${product.price.toFixed(2)}</span>
+                                    ${product.oldPrice ? `<span class="product-old-price">$${product.oldPrice.toFixed(2)}</span>` : ''}
+                                </div>
+                                ${product.stock > 0 ? `<span class="text-success"><small>In Stock (${product.stock})</small></span>` : '<span class="text-danger"><small>Out of Stock</small></span>'}
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <div class="action-buttons d-flex justify-content-between">
+                                <button class="btn view-detail-btn" onclick="showProductDetail(${product.id})">
+                                    <i class="fas fa-eye me-1"></i> View
+                                </button>
+                                <button class="btn add-to-cart-btn" ${product.stock === 0 ? 'disabled' : ''} onclick="addToCart(${product.id})">
+                                    <i class="fas fa-shopping-cart me-1"></i> Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                productContainer.appendChild(productCard);
+            });
+        }
+
+        // Function to generate rating stars
+        function generateRatingStars(rating) {
+            let stars = '';
+            const fullStars = Math.floor(rating);
+            const hasHalfStar = rating % 1 >= 0.5;
+            
+            for (let i = 0; i < fullStars; i++) {
+                stars += '<i class="fas fa-star"></i>';
+            }
+            
+            if (hasHalfStar) {
+                stars += '<i class="fas fa-star-half-alt"></i>';
+            }
+            
+            const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+            for (let i = 0; i < emptyStars; i++) {
+                stars += '<i class="far fa-star"></i>';
+            }
+            
+            return stars;
+        }
+
+        // Function to show product details in modal
+        function showProductDetail(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            const modalContent = document.getElementById('productDetailContent');
+            modalContent.innerHTML = `
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="${product.image}" class="img-fluid rounded" alt="${product.name}">
+                    </div>
+                    <div class="col-md-6">
+                        <h3>${product.name}</h3>
+                        <div class="product-rating mb-3">
+                            ${generateRatingStars(product.rating)}
+                            <small class="text-muted ms-1">(${product.rating} rating)</small>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <h4 class="mb-0 text-primary">$${product.price.toFixed(2)}</h4>
+                            ${product.oldPrice ? `<del class="text-muted ms-2">$${product.oldPrice.toFixed(2)}</del>` : ''}
+                            ${product.organic ? '<span class="badge bg-success ms-2">Organic</span>' : ''}
+                        </div>
+                        <p class="mb-4">${product.description}</p>
+                        <h5>Health Benefits:</h5>
+                        <p>${product.benefits}</p>
+                        <div class="d-flex align-items-center mt-4">
+                            <div class="quantity-control me-4">
+                                <button class="quantity-btn" onclick="adjustQuantity(${product.id}, -1)">-</button>
+                                <input type="text" class="quantity-input" id="quantity-${product.id}" value="1" readonly>
+                                <button class="quantity-btn" onclick="adjustQuantity(${product.id}, 1)">+</button>
+                            </div>
+                            <button class="btn btn-primary btn-lg" ${product.stock === 0 ? 'disabled' : ''} onclick="addToCart(${product.id}, document.getElementById('quantity-${product.id}').value)">
+                                <i class="fas fa-shopping-cart me-2"></i> Add to Cart
+                            </button>
+                        </div>
+                        <div class="mt-3">
+                            ${product.stock > 0 ? 
+                                `<span class="text-success"><i class="fas fa-check-circle me-1"></i> In Stock (${product.stock} available)</span>` : 
+                                '<span class="text-danger"><i class="fas fa-times-circle me-1"></i> Out of Stock</span>'}
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            const modal = new bootstrap.Modal(document.getElementById('productDetailModal'));
+            modal.show();
+        }
+
+        // Function to adjust quantity
+        function adjustQuantity(productId, change) {
+            const quantityInput = document.getElementById(`quantity-${productId}`);
+            let quantity = parseInt(quantityInput.value) + change;
+            if (quantity < 1) quantity = 1;
+            
+            const product = products.find(p => p.id === productId);
+            if (product && quantity > product.stock) {
+                quantity = product.stock;
+            }
+            
+            quantityInput.value = quantity;
+        }
+
+        // Function to add to cart
+        function addToCart(productId, quantity = 1) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            if (product.stock === 0) {
+                alert('This product is out of stock');
+                return;
+            }
+
+            // In a real app, you would add to cart logic here
+            alert(`Added ${quantity} ${product.name}(s) to cart`);
+            console.log(`Added to cart: ${product.name} x${quantity}`);
+        }
+
+        // Function to filter products
+        function filterProducts() {
+            const selectedCategory = document.querySelector('.category-tag.active')?.dataset.category;
+            const priceRange = parseInt(document.getElementById('priceRange').value);
+            const inStock = document.getElementById('inStock').checked;
+            const outOfStock = document.getElementById('outOfStock').checked;
+            const organic = document.getElementById('organic').checked;
+            
+            let filteredProducts = products.filter(product => {
+                // Category filter
+                if (selectedCategory !== 'all' && product.category !== selectedCategory) {
+                    return false;
+                }
+                
+                // Price filter
+                if (product.price > priceRange) {
+                    return false;
+                }
+                
+                // Stock filter
+                if ((inStock && !outOfStock && product.stock === 0) || 
+                    (!inStock && outOfStock && product.stock > 0)) {
+                    return false;
+                }
+                
+                // Organic filter
+                if (organic && !product.organic) {
+                    return false;
+                }
+                
+                return true;
+            });
+            
+            renderProducts(filteredProducts);
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Render all products initially
+            renderProducts(products);
+            
+            // Set up event listeners for filters
+            document.querySelectorAll('.category-tag').forEach(tag => {
+                tag.addEventListener('click', function() {
+                    document.querySelectorAll('.category-tag').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    filterProducts();
+                });
+            });
+            
+            document.getElementById('priceRange').addEventListener('input', filterProducts);
+            document.getElementById('inStock').addEventListener('change', filterProducts);
+            document.getElementById('outOfStock').addEventListener('change', filterProducts);
+            document.getElementById('organic').addEventListener('change', filterProducts);
+            
+            // Search functionality
+            document.querySelector('.search-box input').addEventListener('input', function(e) {
+                const searchTerm = e.target.value.toLowerCase();
+                const filtered = products.filter(product => 
+                    product.name.toLowerCase().includes(searchTerm) || 
+                    product.category.toLowerCase().includes(searchTerm)
+                );
+                renderProducts(filtered);
+            });
+            
+            // Sort dropdown functionality
+            document.querySelectorAll('.sort-dropdown .dropdown-item').forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelectorAll('.sort-dropdown .dropdown-item').forEach(i => i.classList.remove('active'));
+                    this.classList.add('active');
+                    document.getElementById('sortDropdown').textContent = `Sort by: ${this.textContent}`;
+                    
+                    let sortedProducts = [...products];
+                    switch(this.textContent) {
+                        case 'Price: Low to High':
+                            sortedProducts.sort((a, b) => a.price - b.price);
+                            break;
+                        case 'Price: High to Low':
+                            sortedProducts.sort((a, b) => b.price - a.price);
+                            break;
+                        case 'Newest':
+                            // Assuming newer products have higher IDs
+                            sortedProducts.sort((a, b) => b.id - a.id);
+                            break;
+                        case 'Best Rating':
+                            sortedProducts.sort((a, b) => b.rating - a.rating);
+                            break;
+                        default: // Featured
+                            // No sorting needed
+                            break;
+                    }
+                    
+                    renderProducts(sortedProducts);
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
+

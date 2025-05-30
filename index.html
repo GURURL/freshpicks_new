@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+     <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
@@ -45,7 +48,7 @@
                 <div class="header-icons">
                     <a href="#"><i class="fas fa-user"></i></a>
                     <a href="#"><i class="fas fa-heart"></i></a>
-                    <a href="#">
+                    <a href="cart.html">
                         <i class="fas fa-shopping-cart"></i>
                         <span class="cart-count">3</span>
                     </a>
@@ -57,20 +60,10 @@
     <!-- Navigation -->
     <nav>
         <div class="container">
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Shop</a></li>
-                <li>
-                    <a href="#">Categories <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Fresh Fruits</a></li>
-                        <li><a href="#">Organic Vegetables</a></li>
-                        <li><a href="#">Fresh Juices</a></li>
-                        <li><a href="#">Dairy Products</a></li>
-                        <li><a href="#">Herbs & Spices</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">About Us</a></li>
+            <ul class="nav-links mb-0">
+                <li><a href="index.html">Home</a></li>
+                 <li><a href="#">About Us</a></li>
+                <li><a href="product.html">Products</a></li>
                 <li><a href="#">Blog</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
@@ -124,45 +117,98 @@
     </section>
 
     <!-- Categories Section -->
-    <section class="categories">
+    <section class="fresh-categories py-5">
         <div class="container">
-            <div class="section-title">
-                <h2>Shop by Category</h2>
+           <div class="section-title">
+ <h2>Shop by Category</h2>
                 <p>Browse our wide selection of fresh and organic products</p>
-            </div>
+           </div>
+               
+         
             
-            <div class="categories-grid">
-                <div class="category-card">
-                    <img src="assets/images/fruits.jpg" alt="Fresh Fruits">
-                    <div class="category-overlay">
-                        <h3>Fresh Fruits</h3>
-                        <a href="#">Shop Now <i class="fas fa-arrow-right"></i></a>
+            <div class="categories-carousel">
+                <div class="row g-4">
+                    <!-- Vegetables Category -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="category-card vegetable-card">
+                            <div class="category-badge">Seasonal</div>
+                            <div class="category-content">
+                                <h3 class="category-title">Fresh Vegetables</h3>
+                                <p class="category-desc">Organic & locally grown</p>
+                                <div class="category-img">
+                                    <img src="assets/images/vegitables.jpg" alt="Vegetables" class="img-fluid">
+                                </div>
+                                <div class="category-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-number">50+</span>
+                                        <span class="stat-label">Varieties</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-number">100%</span>
+                                        <span class="stat-label">Organic</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn btn-explore">Explore <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="category-card">
-                    <img src="assets/images/vegitables.jpg" alt="Organic Vegetables">
-                    <div class="category-overlay">
-                        <h3>Organic Vegetables</h3>
-                        <a href="#">Shop Now <i class="fas fa-arrow-right"></i></a>
+                    
+                    <!-- Fruits Category -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="category-card fruit-card">
+                            <div class="category-badge">Trending</div>
+                            <div class="category-content">
+                                <h3 class="category-title">Seasonal Fruits</h3>
+                                <p class="category-desc">Sweet & nutritious</p>
+                                <div class="category-img">
+                                    <img src="assets/images/fruits.jpg" alt="Fruits" class="img-fluid">
+                                </div>
+                                <div class="category-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-number">40+</span>
+                                        <span class="stat-label">Varieties</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-number">24h</span>
+                                        <span class="stat-label">Freshness</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn btn-explore">Explore <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1603569283847-aa295f0d016a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Fresh Juices">
-                    <div class="category-overlay">
-                        <h3>Fresh Juices</h3>
-                        <a href="#">Shop Now <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Dairy Products">
-                    <div class="category-overlay">
-                        <h3>Dairy Products</h3>
-                        <a href="#">Shop Now <i class="fas fa-arrow-right"></i></a>
+                    
+                    <!-- Fresh Juice Category -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="category-card juice-card">
+                            <div class="category-badge">New</div>
+                            <div class="category-content">
+                                <h3 class="category-title">Fresh Juices</h3>
+                                <p class="category-desc">Cold-pressed & healthy</p>
+                                <div class="category-img">
+                                    <img src="https://images.unsplash.com/photo-1603569283847-aa295f0d016a" alt="Juices" class="img-fluid">
+                                </div>
+                                <div class="category-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-number">20+</span>
+                                        <span class="stat-label">Flavors</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-number">0%</span>
+                                        <span class="stat-label">Additives</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn btn-explore">Explore <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+
+
 
     <!-- Products Section -->
     <section class="products">
@@ -205,7 +251,7 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star-half-alt"></i>
                         </div>
-                        <button class="add-to-cart">
+                        <button class="add-to-cart" onclick="location.href='cart.html'">
                             <i class="fas fa-shopping-cart"></i> Add to Cart
                         </button>
                     </div>
@@ -235,7 +281,7 @@
                             <i class="fas fa-star"></i>
                             <i class="far fa-star"></i>
                         </div>
-                        <button class="add-to-cart">
+                        <button class="add-to-cart"  onclick="location.href='cart.html'">
                             <i class="fas fa-shopping-cart"></i> Add to Cart
                         </button>
                     </div>
@@ -263,7 +309,7 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <button class="add-to-cart">
+                        <button class="add-to-cart"  onclick="location.href='cart.html'">
                             <i class="fas fa-shopping-cart"></i> Add to Cart
                         </button>
                     </div>
@@ -292,7 +338,7 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star-half-alt"></i>
                         </div>
-                        <button class="add-to-cart">
+                        <button class="add-to-cart"  onclick="location.href='cart.html'">
                             <i class="fas fa-shopping-cart"></i> Add to Cart
                         </button>
                     </div>
@@ -386,93 +432,50 @@
     </section>
 
     <!-- Modern Footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <a href="#" class="footer-logo">
-                        <img src="freshpics/logo.png" alt="logo" class="logo-new" style="filter: brightness(0) invert(1);">
-                    </a>
-                    <div class="footer-about">
-                        <p>Providing fresh, organic fruits, vegetables and juices since 2010. Quality you can taste!</p>
-                    </div>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+    <!-- Footer -->
+    <footer class="freshpicks-footer">
+        <div class="container">
+            <div class="freshpicks-footer-grid">
+                <div>
+                    <h3 class="freshpicks-footer-heading">FreshPicks</h3>
+                    <p style="color: #bbb; margin-bottom: 15px;">Your one-stop shop for fresh fruits, vegetables and juices delivered to your doorstep.</p>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="#" style="color: #bbb; font-size: 20px;"><i class="fab fa-facebook"></i></a>
+                        <a href="#" style="color: #bbb; font-size: 20px;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="color: #bbb; font-size: 20px;"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
-                
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Shop</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Blog</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                <div>
+                    <h3 class="freshpicks-footer-heading">Quick Links</h3>
+                    <ul class="freshpicks-footer-links">
+                        <li class="freshpicks-footer-link"><a href="#">Home</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">Shop</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">About Us</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">Contact</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">FAQ</a></li>
                     </ul>
                 </div>
-                
-                <div class="footer-column">
-                    <h3>Categories</h3>
-                    <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Fresh Fruits</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Organic Vegetables</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Fresh Juices</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Dairy Products</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Herbs & Spices</a></li>
+                <div>
+                    <h3 class="freshpicks-footer-heading">Categories</h3>
+                    <ul class="freshpicks-footer-links">
+                        <li class="freshpicks-footer-link"><a href="#">Fruits</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">Vegetables</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">Fresh Juices</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">Organic Products</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">Seasonal Specials</a></li>
                     </ul>
                 </div>
-                
-                <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <ul class="contact-info">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>123 Green Street, Farmville, CA 12345</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <span>+91 987 987 9087</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <span>info@freshpicks.com</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-clock"></i>
-                            <span>Mon-Sat: 8:00 AM - 8:00 PM</span>
-                        </li>
+                <div>
+                    <h3 class="freshpicks-footer-heading">Contact Us</h3>
+                    <ul class="freshpicks-footer-links">
+                        <li class="freshpicks-footer-link"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>123 Fresh Picks, Tamil Nadu</li>
+                        <li class="freshpicks-footer-link"><i class="fas fa-phone" style="margin-right: 8px;"></i> +91 9876543210</li>
+                        <li class="freshpicks-footer-link"><i class="fas fa-envelope" style="margin-right: 8px;"></i> hello@freshpicks.com</li>
                     </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Newsletter</h3>
-                    <div class="footer-newsletter">
-                        <p>Subscribe to our newsletter for the latest updates and offers.</p>
-                        <form class="footer-newsletter-form">
-                            <input type="email" placeholder="Your email address">
-                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                        </form>
-                        <p>We respect your privacy. Unsubscribe at any time.</p>
-                    </div>
                 </div>
             </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <div class="footer-bottom-content">
-                <p class="footer-copyright">&copy; 2025 freshpicks. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a> | <a href="#">Sitemap</a></p>
-                <div class="footer-payments">
-                    <i class="fab fa-cc-visa"></i>
-                    <i class="fab fa-cc-mastercard"></i>
-                    <i class="fab fa-cc-paypal"></i>
-                    <i class="fab fa-cc-apple-pay"></i>
-                    <i class="fab fa-cc-amazon-pay"></i>
-                </div>
+            <div class="freshpicks-footer-bottom">
+                <p>&copy; 2023 FreshPicks. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -480,6 +483,9 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+     <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
     <script src="assets/js/script.js"></script>
 
 </body>

@@ -3,439 +3,529 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FreshHarvest | Organic Fruits, Vegetables & Fresh Juices</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>About Us - FreshPicks | Fresh Juice, Fruits & Vegetables</title>
     <style>
-      
+        :root {
+            --primary: #4CAF50;
+            --primary-dark: #388E3C;
+            --secondary: #FF9800;
+            --light: #F5F5F5;
+            --dark: #212121;
+            --gray: #757575;
+            --white: #FFFFFF;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
 
+        .fresh-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
+        /* Header Styles */
+        .fresh-header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .fresh-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .fresh-logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .fresh-logo span {
+            color: var(--secondary);
+        }
+
+        .fresh-nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .fresh-nav-links li {
+            margin-left: 30px;
+        }
+
+        .fresh-nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .fresh-nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .fresh-hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .fresh-about-hero {
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .fresh-about-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+        }
+
+        .fresh-about-hero p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--gray);
+        }
+
+        /* About Content */
+        .fresh-about-content {
+            padding: 80px 0;
+        }
+
+        .fresh-about-section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+
+        .fresh-about-text {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+
+        .fresh-about-text h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+        }
+
+        .fresh-about-text p {
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+
+        .fresh-about-image {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+
+        .fresh-about-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .fresh-about-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .fresh-feature-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .fresh-feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .fresh-feature-icon {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .fresh-feature-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+
+        /* Team Section */
+        .fresh-about-team {
+            background-color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .fresh-team-title {
+            margin-bottom: 60px;
+        }
+
+        .fresh-team-title h2 {
+            font-size: 36px;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+
+        .fresh-team-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .fresh-team-members {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .fresh-team-card {
+            background-color: var(--light);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .fresh-team-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .fresh-team-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            border: 5px solid var(--white);
+            box-shadow: var(--shadow);
+        }
+
+        .fresh-team-card h3 {
+            margin-bottom: 5px;
+            color: var(--primary-dark);
+        }
+
+        .fresh-team-card p {
+            color: var(--secondary);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        /* Mission Section */
+        .fresh-about-mission {
+            background-color: var(--primary);
+            padding: 80px 0;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .fresh-mission-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .fresh-mission-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .fresh-mission-content p {
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+
+        .fresh-mission-btn {
+            display: inline-block;
+            background-color: var(--white);
+            color: var(--primary);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .fresh-mission-btn:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow);
+        }
+
+        /* Footer */
+        .fresh-footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .fresh-footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .fresh-footer-col h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .fresh-footer-col ul {
+            list-style: none;
+        }
+
+        .fresh-footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .fresh-footer-col ul li a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .fresh-footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .fresh-footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--gray);
+            color: var(--gray);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .fresh-nav-links {
+                display: none;
+            }
+
+            .fresh-hamburger {
+                display: block;
+            }
+
+            .fresh-about-hero h1 {
+                font-size: 36px;
+            }
+
+            .fresh-about-hero p {
+                font-size: 16px;
+            }
+
+            .fresh-about-section {
+                flex-direction: column;
+            }
+
+            .fresh-about-text, .fresh-about-image {
+                min-width: 100%;
+            }
+
+            .fresh-about-text {
+                order: 2;
+            }
+
+            .fresh-about-image {
+                order: 1;
+                margin-bottom: 30px;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="container top-bar-content">
-            <div class="top-bar-text">
-                <i class="fas fa-truck"></i> Free delivery on orders over $50
-            </div>
-            <div class="top-bar-links">
-                <a href="#"><i class="fas fa-phone"></i> +1 (123) 456-7890</a>
-                <a href="#"><i class="fas fa-envelope"></i> info@freshharvest.com</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Main Header -->
-    <header>
-        <div class="container">
-            <div class="main-header">
-                <a href="index.html" class="logo">
-                    <i class="fas fa-leaf"></i> FreshHarvest
-                </a>
-                
-                <button class="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </button>
-                
-                <div class="search-bar">
-                    <input type="text" placeholder="Search for fruits, vegetables, juices...">
-                    <button><i class="fas fa-search"></i></button>
+    <!-- Header -->
+    <header class="fresh-header">
+        <div class="fresh-container">
+            <nav class="fresh-nav">
+                <a href="index.html" class="fresh-logo">Fresh<span>Picks</span></a>
+                <ul class="fresh-nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="fresh-hamburger">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
                 </div>
-                
-                <div class="header-icons">
-                    <a href="#"><i class="fas fa-user"></i></a>
-                    <a href="#"><i class="fas fa-heart"></i></a>
-                    <a href="#">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count">3</span>
-                    </a>
-                </div>
-            </div>
+            </nav>
         </div>
     </header>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Shop</a></li>
-                <li>
-                    <a href="#">Categories <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Fresh Fruits</a></li>
-                        <li><a href="#">Organic Vegetables</a></li>
-                        <li><a href="#">Fresh Juices</a></li>
-                        <li><a href="#">Dairy Products</a></li>
-                        <li><a href="#">Herbs & Spices</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Fresh & Organic Fruits & Vegetables</h1>
-            <p>Delivered straight to your doorstep. Enjoy farm-fresh quality with every bite.</p>
-            <a href="#" class="btn">Shop Now</a>
-            <a href="#" class="btn btn-outline">Learn More</a>
+    <section class="fresh-about-hero">
+        <div class="fresh-container">
+            <h1>Our Story</h1>
+            <p>FreshPicks was born from a simple idea: to deliver farm-fresh produce and healthy juices right to your doorstep while supporting local farmers and promoting sustainable agriculture.</p>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features">
-        <div class="container">
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-truck"></i>
-                    </div>
-                    <h3>Free Delivery</h3>
-                    <p>Free shipping on all orders over $50</p>
+    <!-- About Content -->
+    <section class="fresh-about-content">
+        <div class="fresh-container">
+            <div class="fresh-about-section">
+                <div class="fresh-about-text">
+                    <h2>Who We Are</h2>
+                    <p>Founded in 2015, FreshPicks is a leading ecommerce platform specializing in fresh fruits, vegetables, and cold-pressed juices. We're more than just a grocery delivery service - we're a movement towards healthier living and sustainable food systems.</p>
+                    <p>Our team of nutritionists, farmers, and food enthusiasts work tirelessly to ensure that every product we deliver meets our high standards of quality, freshness, and nutritional value.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-undo"></i>
-                    </div>
-                    <h3>Easy Returns</h3>
-                    <p>30-day return policy for all products</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <h3>Secure Payment</h3>
-                    <p>100% secure payment options</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3>24/7 Support</h3>
-                    <p>Dedicated support anytime</p>
+                <div class="fresh-about-image">
+                    <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Fresh fruits and vegetables">
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Categories Section -->
-    <section class="categories">
-        <div class="container">
-            <div class="section-title">
-                <h2>Shop by Category</h2>
-                <p>Browse our wide selection of fresh and organic products</p>
+            <div class="fresh-about-section">
+                <div class="fresh-about-image">
+                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Fresh juice production">
+                </div>
+                <div class="fresh-about-text">
+                    <h2>Our Process</h2>
+                    <p>At FreshPicks, we follow a farm-to-table approach that ensures maximum freshness and nutritional value in every product we deliver.</p>
+                    <p>Our fruits and vegetables are hand-picked at peak ripeness and delivered within 24 hours of harvest. Our juices are cold-pressed to preserve nutrients and never contain added sugars or preservatives.</p>
+                </div>
             </div>
-            
-            <div class="categories-grid">
-                <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Fresh Fruits">
-                    <div class="category-overlay">
-                        <h3>Fresh Fruits</h3>
-                        <a href="#">Shop Now <i class="fas fa-arrow-right"></i></a>
-                    </div>
+
+            <div class="fresh-about-features">
+                <div class="fresh-feature-card">
+                    <div class="fresh-feature-icon">🌱</div>
+                    <h3>Organic Farming</h3>
+                    <p>We partner with certified organic farms that prioritize sustainable practices and avoid harmful pesticides.</p>
                 </div>
-                <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Organic Vegetables">
-                    <div class="category-overlay">
-                        <h3>Organic Vegetables</h3>
-                        <a href="#">Shop Now <i class="fas fa-arrow-right"></i></a>
-                    </div>
+                <div class="fresh-feature-card">
+                    <div class="fresh-feature-icon">🚚</div>
+                    <h3>Fast Delivery</h3>
+                    <p>Orders placed before noon are delivered the same day, ensuring you get the freshest produce possible.</p>
                 </div>
-                <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1603569283847-aa295f0d016a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Fresh Juices">
-                    <div class="category-overlay">
-                        <h3>Fresh Juices</h3>
-                        <a href="#">Shop Now <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Dairy Products">
-                    <div class="category-overlay">
-                        <h3>Dairy Products</h3>
-                        <a href="#">Shop Now <i class="fas fa-arrow-right"></i></a>
-                    </div>
+                <div class="fresh-feature-card">
+                    <div class="fresh-feature-icon">❤️</div>
+                    <h3>Health Focused</h3>
+                    <p>Our nutritionists curate seasonal boxes packed with the most nutrient-dense fruits and vegetables.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Products Section -->
-    <section class="products">
-        <div class="container">
-            <div class="section-title">
-                <h2>Featured Products</h2>
-                <p>Our best selling fresh and organic products</p>
+    <!-- Team Section -->
+    <section class="fresh-about-team">
+        <div class="fresh-container">
+            <div class="fresh-team-title">
+                <h2>Meet Our Team</h2>
+                <p>The passionate individuals behind FreshPicks who work every day to bring you the freshest, healthiest products.</p>
             </div>
-            
-            <div class="products-filter">
-                <button class="filter-btn active">All</button>
-                <button class="filter-btn">Fruits</button>
-                <button class="filter-btn">Vegetables</button>
-                <button class="filter-btn">Juices</button>
-                <button class="filter-btn">Dairy</button>
-            </div>
-            
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Organic Apples">
-                        <div class="product-badge">Organic</div>
-                        <div class="product-actions">
-                            <button class="product-action-btn"><i class="fas fa-heart"></i></button>
-                            <button class="product-action-btn"><i class="fas fa-eye"></i></button>
-                            <button class="product-action-btn"><i class="fas fa-exchange-alt"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Fruits</span>
-                        <h3 class="product-title">Organic Apples</h3>
-                        <div class="product-price">
-                            <span class="current-price">$2.99</span>
-                            <span class="old-price">$3.49</span>
-                        </div>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                        <button class="add-to-cart">
-                            <i class="fas fa-shopping-cart"></i> Add to Cart
-                        </button>
-                    </div>
+            <div class="fresh-team-members">
+                <div class="fresh-team-card">
+                    <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson" class="fresh-team-img">
+                    <h3>Sarah Johnson</h3>
+                    <p>Founder & CEO</p>
+                    <p>Nutritionist with 15 years of experience in the health food industry.</p>
                 </div>
-                
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Organic Carrots">
-                        <div class="product-badge">Sale</div>
-                        <div class="product-actions">
-                            <button class="product-action-btn"><i class="fas fa-heart"></i></button>
-                            <button class="product-action-btn"><i class="fas fa-eye"></i></button>
-                            <button class="product-action-btn"><i class="fas fa-exchange-alt"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Vegetables</span>
-                        <h3 class="product-title">Organic Carrots</h3>
-                        <div class="product-price">
-                            <span class="current-price">$1.99</span>
-                            <span class="old-price">$2.49</span>
-                        </div>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </div>
-                        <button class="add-to-cart">
-                            <i class="fas fa-shopping-cart"></i> Add to Cart
-                        </button>
-                    </div>
+                <div class="fresh-team-card">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen" class="fresh-team-img">
+                    <h3>Michael Chen</h3>
+                    <p>Head of Operations</p>
+                    <p>Former farm manager with expertise in sustainable agriculture.</p>
                 </div>
-                
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1603569283847-aa295f0d016a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Orange Juice">
-                        <div class="product-actions">
-                            <button class="product-action-btn"><i class="fas fa-heart"></i></button>
-                            <button class="product-action-btn"><i class="fas fa-eye"></i></button>
-                            <button class="product-action-btn"><i class="fas fa-exchange-alt"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Juices</span>
-                        <h3 class="product-title">Fresh Orange Juice</h3>
-                        <div class="product-price">
-                            <span class="current-price">$4.99</span>
-                        </div>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <button class="add-to-cart">
-                            <i class="fas fa-shopping-cart"></i> Add to Cart
-                        </button>
-                    </div>
+                <div class="fresh-team-card">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya Patel" class="fresh-team-img">
+                    <h3>Priya Patel</h3>
+                    <p>Head Chef</p>
+                    <p>Creates our delicious juice recipes and meal plans.</p>
                 </div>
-                
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Organic Milk">
-                        <div class="product-badge">New</div>
-                        <div class="product-actions">
-                            <button class="product-action-btn"><i class="fas fa-heart"></i></button>
-                            <button class="product-action-btn"><i class="fas fa-eye"></i></button>
-                            <button class="product-action-btn"><i class="fas fa-exchange-alt"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Dairy</span>
-                        <h3 class="product-title">Organic Milk</h3>
-                        <div class="product-price">
-                            <span class="current-price">$3.49</span>
-                        </div>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                        <button class="add-to-cart">
-                            <i class="fas fa-shopping-cart"></i> Add to Cart
-                        </button>
-                    </div>
+                <div class="fresh-team-card">
+                    <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="David Wilson" class="fresh-team-img">
+                    <h3>David Wilson</h3>
+                    <p>Farm Relations</p>
+                    <p>Connects us with the best local organic farms.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container">
-            <div class="section-title">
-                <h2>What Our Customers Say</h2>
-                <p>Hear from our satisfied customers about their experience</p>
+    <!-- Mission Section -->
+    <section class="fresh-about-mission">
+        <div class="fresh-container">
+            <div class="fresh-mission-content">
+                <h2>Our Mission</h2>
+                <p>To make healthy eating convenient and accessible while supporting local farmers and reducing food waste. We believe that everyone deserves access to fresh, nutritious food that's good for both people and the planet.</p>
+                <a href="shop.html" class="fresh-mission-btn">Shop Fresh Now</a>
             </div>
-            
-            <div class="testimonials-slider">
-                <div class="testimonial-card">
-                    <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah Johnson" class="testimonial-avatar">
-                    <p class="testimonial-text">"The quality of fruits and vegetables from FreshHarvest is unmatched. I've been a loyal customer for over a year and everything is always fresh and delicious!"</p>
-                    <h4 class="testimonial-author">Sarah Johnson</h4>
-                    <p class="testimonial-role">Regular Customer</p>
-                </div>
-                
-                <div class="testimonial-card">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen" class="testimonial-avatar">
-                    <p class="testimonial-text">"I love the convenience of having organic produce delivered to my door. The juices are my favorite - so fresh and full of flavor!"</p>
-                    <h4 class="testimonial-author">Michael Chen</h4>
-                    <p class="testimonial-role">Organic Enthusiast</p>
-                </div>
-                
-                <div class="testimonial-card">
-                    <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emily Rodriguez" class="testimonial-avatar">
-                    <p class="testimonial-text">"As a busy mom, FreshHarvest saves me so much time. The quality is consistently excellent and my kids actually eat their veggies now!"</p>
-                    <h4 class="testimonial-author">Emily Rodriguez</h4>
-                    <p class="testimonial-role">Mother of Two</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter Section -->
-    <section class="newsletter">
-        <div class="container">
-            <h2>Subscribe to Our Newsletter</h2>
-            <p>Get the latest updates on new products, seasonal offers, and healthy recipes straight to your inbox.</p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Your email address">
-                <button type="submit">Subscribe</button>
-            </form>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>FreshHarvest</h3>
-                    <p>Providing fresh, organic fruits, vegetables and juices since 2010. Quality you can taste!</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
-                    </div>
+    <footer class="fresh-footer">
+        <div class="fresh-container">
+            <div class="fresh-footer-content">
+                <div class="fresh-footer-col">
+                    <h3>FreshPicks</h3>
+                    <p>Delivering farm-fresh produce and healthy juices to your doorstep since 2015.</p>
                 </div>
-                
-                <div class="footer-column">
+                <div class="fresh-footer-col">
                     <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Shop</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contact</a></li>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                
-                <div class="footer-column">
-                    <h3>Categories</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Fresh Fruits</a></li>
-                        <li><a href="#">Organic Vegetables</a></li>
-                        <li><a href="#">Fresh Juices</a></li>
-                        <li><a href="#">Dairy Products</a></li>
-                        <li><a href="#">Herbs & Spices</a></li>
+                <div class="fresh-footer-col">
+                    <h3>Information</h3>
+                    <ul>
+                        <li><a href="#">Delivery Information</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
                     </ul>
                 </div>
-                
-                <div class="footer-column">
+                <div class="fresh-footer-col">
                     <h3>Contact Us</h3>
-                    <ul class="contact-info">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>123 Green Street, Farmville, CA 12345</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <span>+1 (123) 456-7890</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <span>info@freshharvest.com</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-clock"></i>
-                            <span>Mon-Sat: 8:00 AM - 8:00 PM</span>
-                        </li>
+                    <ul>
+                        <li>123 Fresh Street</li>
+                        <li>Farmville, FP 12345</li>
+                        <li>hello@freshpicks.com</li>
+                        <li>(123) 456-7890</li>
                     </ul>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2023 FreshHarvest. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+            <div class="fresh-footer-bottom">
+                <p>&copy; 2023 FreshPicks. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
-
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const nav = document.querySelector('nav');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            nav.classList.toggle('active');
-        });
-        
-        // Simple filter functionality for demonstration
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                // In a real implementation, you would filter products here
-            });
-        });
-        
-        // Testimonial slider functionality would go here
-        // In a real implementation, you would use a library like Slick Slider
-    </script>
 </body>
 </html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>freshpicks | Organic Fruits, Vegetables & Fresh Juices</title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+      <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-text">
+                <i class="fas fa-truck"></i> Free delivery on orders over ₹50
+            </div>
+            <div class="top-bar-links">
+                <a href="#"><i class="fas fa-phone"></i> +91 987 987 9087</a>
+                <a href="#"><i class="fas fa-envelope"></i> info@freshpicks.com</a>
+            </div>
+        </div>
+    </div>
+        <!-- Main Header -->
+    <header>
+        <div class="container">
+            <div class="main-header">
+                <a href="index.html" class="logo">
+                    <img src="logo.png" alt="logo" class="logo-new"> 
+                </a>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Search for fruits, vegetables, juices...">
+                    <button id="search-btn"><i class="fas fa-search"></i></button>
+                    <div class="search-results" id="search-results"></div>
+                </div>
+                
+                <div class="header-icons">
+                    <a href="#"><i class="fas fa-user"></i></a>
+                    <a href="#"><i class="fas fa-heart"></i></a>
+                    <a href="#">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">3</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+        <!-- Main Content -->
+         <section class="fresh-cart-body">
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="fresh-cart-container">
+                    <div class="fresh-cart-header">
+                        <h5 class="mb-0"><i class="fas fa-shopping-cart me-2"></i>Your Shopping Cart (3 items)</h5>
+                    </div>
+                    
+                    <!-- Cart Items -->
+                    <div class="fresh-cart-item">
+                        <div class="row align-items-center">
+                            <div class="col-md-2 col-4">
+                                <img src="https://images.unsplash.com/photo-1582284540020-8acbe03f4924?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Organic Apples" class="fresh-cart-product-img">
+                            </div>
+                            <div class="col-md-4 col-8">
+                                <h6 class="fresh-cart-product-title">Organic Fuji Apples</h6>
+                                <span class="fresh-cart-product-category">Fruits</span>
+                                <div class="mt-2">
+                                    <small class="text-success"><i class="fas fa-check-circle me-1"></i>In Stock</small>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-6 mt-md-0 mt-3">
+                                <div class="fresh-cart-quantity-control">
+                                    <button class="fresh-cart-quantity-btn">-</button>
+                                    <input type="text" class="fresh-cart-quantity-input" value="2">
+                                    <button class="fresh-cart-quantity-btn">+</button>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-4 fresh-cart-price-col">
+                                <span class="fresh-cart-price">₹3.99</span>
+                            </div>
+                            <div class="col-md-2 col-2 text-end">
+                                <i class="fas fa-trash fresh-cart-remove-btn"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="fresh-cart-item">
+                        <div class="row align-items-center">
+                            <div class="col-md-2 col-4">
+                                <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Organic Carrots" class="fresh-cart-product-img">
+                            </div>
+                            <div class="col-md-4 col-8">
+                                <h6 class="fresh-cart-product-title">Organic Carrots</h6>
+                                <span class="fresh-cart-product-category">Vegetables</span>
+                                <div class="mt-2">
+                                    <small class="text-success"><i class="fas fa-check-circle me-1"></i>In Stock</small>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-6 mt-md-0 mt-3">
+                                <div class="fresh-cart-quantity-control">
+                                    <button class="fresh-cart-quantity-btn">-</button>
+                                    <input type="text" class="fresh-cart-quantity-input" value="1">
+                                    <button class="fresh-cart-quantity-btn">+</button>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-4 fresh-cart-price-col">
+                                <span class="fresh-cart-price">₹2.49</span>
+                            </div>
+                            <div class="col-md-2 col-2 text-end">
+                                <i class="fas fa-trash fresh-cart-remove-btn"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="fresh-cart-item">
+                        <div class="row align-items-center">
+                            <div class="col-md-2 col-4">
+                                <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Organic Milk" class="fresh-cart-product-img">
+                            </div>
+                            <div class="col-md-4 col-8">
+                                <h6 class="fresh-cart-product-title">Organic Whole Milk</h6>
+                                <span class="fresh-cart-product-category">Dairy</span>
+                                <div class="mt-2">
+                                    <small class="text-warning"><i class="fas fa-exclamation-circle me-1"></i>Only 3 left</small>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-6 mt-md-0 mt-3">
+                                <div class="fresh-cart-quantity-control">
+                                    <button class="fresh-cart-quantity-btn">-</button>
+                                    <input type="text" class="fresh-cart-quantity-input" value="1">
+                                    <button class="fresh-cart-quantity-btn">+</button>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-4 fresh-cart-price-col">
+                                <span class="fresh-cart-price">₹4.99</span>
+                            </div>
+                            <div class="col-md-2 col-2 text-end">
+                                <i class="fas fa-trash fresh-cart-remove-btn"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Promo Code -->
+                <div class="d-flex mb-4">
+                    <input type="text" class="fresh-cart-promo-input" placeholder="Enter promo code">
+                    <button class="fresh-cart-promo-btn">Apply</button>
+                </div>
+                
+                <!-- Saved for Later -->
+                <div class="fresh-cart-saved-section">
+                    <h5 class="mb-3"><i class="far fa-bookmark me-2"></i>Saved for Later (2 items)</h5>
+                    
+                    <div class="fresh-cart-saved-item">
+                        <img src="https://images.unsplash.com/photo-1603569283847-aa295f0d016a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Organic Bread" class="fresh-cart-saved-img">
+                        <div class="flex-grow-1">
+                            <h6 class="mb-1 fresh-cart-product-title">Organic Whole Wheat Bread</h6>
+                            <small class="fresh-cart-product-category">Bakery</small>
+                            <div class="mt-1 fresh-cart-price">₹4.29</div>
+                        </div>
+                        <button class="fresh-cart-move-btn me-2"><i class="fas fa-cart-plus me-1"></i>Move to Cart</button>
+                        <i class="fas fa-trash fresh-cart-remove-btn"></i>
+                    </div>
+                    
+                    <div class="fresh-cart-saved-item">
+                        <img src="https://images.unsplash.com/photo-1576186726580-a816e8b12896?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Organic Eggs" class="fresh-cart-saved-img">
+                        <div class="flex-grow-1">
+                            <h6 class="mb-1 fresh-cart-product-title">Organic Free-Range Eggs</h6>
+                            <small class="fresh-cart-product-category">Dairy & Eggs</small>
+                            <div class="mt-1 fresh-cart-price">₹5.99</div>
+                        </div>
+                        <button class="fresh-cart-move-btn me-2"><i class="fas fa-cart-plus me-1"></i>Move to Cart</button>
+                        <i class="fas fa-trash fresh-cart-remove-btn"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Order Summary -->
+            <div class="col-lg-4">
+                <div class="fresh-cart-summary-card sticky-top" style="top: 20px;">
+                    <h5 class="fresh-cart-summary-title">Order Summary</h5>
+                    
+                    <div class="fresh-cart-summary-row">
+                        <span>Subtotal (3 items)</span>
+                        <span>₹11.47</span>
+                    </div>
+                    
+                    <div class="fresh-cart-summary-row">
+                        <span>Delivery Fee</span>
+                        <span class="text-success">Free</span>
+                    </div>
+                    
+                    <div class="fresh-cart-summary-row">
+                        <span>Estimated Tax</span>
+                        <span>₹0.92</span>
+                    </div>
+                    
+                    <div class="fresh-cart-summary-row fresh-cart-total-row">
+                        <span>Total</span>
+                        <span>₹12.39</span>
+                    </div>
+                    
+                    <button class="fresh-cart-checkout-btn">
+                        <i class="fas fa-lock me-2"></i>Proceed to Checkout
+                    </button>
+                    
+                    <button class="fresh-cart-continue-btn">
+                        <i class="fas fa-arrow-left me-2"></i>Continue Shopping
+                    </button>
+                    
+                    <div class="mt-3">
+                        <small class="text-muted"><i class="fas fa-shield-alt me-1"></i>Secure checkout</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+         </section>
+
+
+         
+
+    <!-- Footer -->
+    <footer class="freshpicks-footer">
+        <div class="container">
+            <div class="freshpicks-footer-grid">
+                <div>
+                    <h3 class="freshpicks-footer-heading">FreshPicks</h3>
+                    <p style="color: #bbb; margin-bottom: 15px;">Your one-stop shop for fresh fruits, vegetables and juices delivered to your doorstep.</p>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="#" style="color: #bbb; font-size: 20px;"><i class="fab fa-facebook"></i></a>
+                        <a href="#" style="color: #bbb; font-size: 20px;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="color: #bbb; font-size: 20px;"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="freshpicks-footer-heading">Quick Links</h3>
+                    <ul class="freshpicks-footer-links">
+                        <li class="freshpicks-footer-link"><a href="#">Home</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">Shop</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">About Us</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">Contact</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="freshpicks-footer-heading">Categories</h3>
+                    <ul class="freshpicks-footer-links">
+                        <li class="freshpicks-footer-link"><a href="#">Fruits</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">Vegetables</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">Fresh Juices</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">Organic Products</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">Seasonal Specials</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="freshpicks-footer-heading">Contact Us</h3>
+                    <ul class="freshpicks-footer-links">
+                        <li class="freshpicks-footer-link"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>123 Fresh Picks, Tamil Nadu</li>
+                        <li class="freshpicks-footer-link"><i class="fas fa-phone" style="margin-right: 8px;"></i> +91 9876543210</li>
+                        <li class="freshpicks-footer-link"><i class="fas fa-envelope" style="margin-right: 8px;"></i> hello@freshpicks.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="freshpicks-footer-bottom">
+                <p>&copy; 2023 FreshPicks. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+      <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="assets/js/script.js"></script>
+<script>
+    
+     // Quantity control functionality
+        document.querySelectorAll('.fresh-cart-quantity-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const input = this.parentNode.querySelector('.fresh-cart-quantity-input');
+                let value = parseInt(input.value);
+                
+                if (this.textContent === '+' && value < 10) {
+                    input.value = value + 1;
+                } else if (this.textContent === '-' && value > 1) {
+                    input.value = value - 1;
+                }
+                
+                // In a real app, you would update the cart total here
+            });
+        });
+        
+        // Remove item functionality
+        document.querySelectorAll('.fresh-cart-remove-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const cartItem = this.closest('.fresh-cart-item');
+                cartItem.style.opacity = '0';
+                setTimeout(() => {
+                    cartItem.remove();
+                    // In a real app, you would update the cart count and total here
+                }, 300);
+            });
+        });
+        
+        // Move to cart functionality for saved items
+        document.querySelectorAll('.fresh-cart-move-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const savedItem = this.closest('.fresh-cart-saved-item');
+                savedItem.style.transform = 'translateX(-100%)';
+                savedItem.style.opacity = '0';
+                setTimeout(() => {
+                    savedItem.remove();
+                    // In a real app, you would move this item to the cart
+                }, 300);
+            });
+        });
+</script>
+
+</body>
+</html>

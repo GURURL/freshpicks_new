@@ -129,8 +129,8 @@
 
             <!-- Products Section -->
             <div class="col-lg-9">
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h4 class="mb-0">Fresh Products</h4>
+                <div class="d-flex justify-content-between mb-4">
+                    <h4 class="mb-0">All Products</h4>
                     <div class="sort-dropdown">
                         <div class="dropdown">
                             <button class="btn dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown">
@@ -245,11 +245,11 @@
         const products = [
             {
                 id: 1,
-                name: "Organic Apples",
-                category: "fruits",
+                name: "Orange Juice",
+                category: "juice",
                 price: 2.99,
                 oldPrice: 3.49,
-                image: "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                image: "assets/images/orangejuice.jpg",
                 rating: 4.5,
                 stock: 10,
                 organic: true,
@@ -275,7 +275,7 @@
                 category: "juices",
                 price: 4.99,
                 oldPrice: 5.49,
-                image: "assets/images/fruits.jpg",
+                image: "assets/images/orangejuice.jpg",
                 rating: 4.7,
                 stock: 8,
                 organic: true,
@@ -310,11 +310,11 @@
             },
             {
                 id: 6,
-                name: "Green Juice",
+                name: "Stawberry Juice",
                 category: "juices",
                 price: 5.49,
                 oldPrice: 5.99,
-                image: "https://images.unsplash.com/photo-1542843137-8791a6904d14?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                image: "assets/images/stawberry.jpg",
                 rating: 4.6,
                 stock: 7,
                 organic: true,
@@ -376,8 +376,8 @@
                                 ${generateRatingStars(product.rating)}
                                 <small class="text-muted ms-1">(${product.rating})</small>
                             </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
+                            <div class="d-flex justify-content-between">
+                                <div class="d-f">
                                     <span class="product-price">₹${product.price.toFixed(2)}</span>
                                     ${product.oldPrice ? `<span class="product-old-price">₹${product.oldPrice.toFixed(2)}</span>` : ''}
                                 </div>

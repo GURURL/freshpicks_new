@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>freshpicks | Organic Fruits, Vegetables & Fresh Juices</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+     <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-text">
+                <i class="fas fa-truck"></i> Free delivery on orders over ₹50
+            </div>
+            <div class="top-bar-links">
+                <a href="#"><i class="fas fa-phone"></i> +91 987 987 9087</a>
+                <a href="#"><i class="fas fa-envelope"></i> info@freshpicks.com</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header>
+        <div class="container">
+            <div class="main-header">
+                <a href="index.html" class="logo">
+                    <img src="logo.png" alt="logo" class="logo-new"> 
+                </a>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Search for fruits, vegetables, juices...">
+                    <button id="search-btn"><i class="fas fa-search"></i></button>
+                    <div class="search-results" id="search-results"></div>
+                </div>
+                
+                <div class="header-icons">
+                    <a href="#"><i class="fas fa-user"></i></a>
+                    <a href="#"><i class="fas fa-heart"></i></a>
+                    <a href="cart.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">3</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <ul class="nav-links mb-0">
+                <li><a href="index.html">Home</a></li>
+                 <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="fp-about-hero">
+        <div class="fp-container">
+            <div class="fp-hero-content">
+                <div class="fp-hero-text">
+                    <h1>Farm Fresh Goodness Delivered to Your Door</h1>
+                    <p>At FreshPicks, we're revolutionizing the way you experience fresh produce. Our mission is simple: connect you directly with nature's finest offerings while supporting sustainable farming practices.</p>
+                    <div class="fp-hero-btns">
+                        <a href="product.html" class="fp-btn-primary">Shop Seasonal Picks</a>
+                        <a href="#story" class="fp-btn-secondary">Our Story</a>
+                    </div>
+                </div>
+                <div class="fp-hero-image">
+                    <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Fresh fruits and vegetables" class="fp-hero-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="fp-stats">
+        <div class="fp-container">
+            <div class="fp-stats-grid">
+                <div class="fp-stat-card">
+                    <div class="fp-stat-number">200+</div>
+                    <div class="fp-stat-label">Local Farms Partnered</div>
+                </div>
+                <div class="fp-stat-card">
+                    <div class="fp-stat-number">10K+</div>
+                    <div class="fp-stat-label">Happy Customers</div>
+                </div>
+                <div class="fp-stat-card">
+                    <div class="fp-stat-number">24h</div>
+                    <div class="fp-stat-label">Farm to Door Delivery</div>
+                </div>
+                <div class="fp-stat-card">
+                    <div class="fp-stat-number">100%</div>
+                    <div class="fp-stat-label">Organic Certified</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="fp-about-section" id="story">
+        <div class="fp-container">
+            <div class="fp-section-title">
+                <h2>Our Story</h2>
+                <p>From humble beginnings to becoming a leader in organic produce delivery</p>
+            </div>
+            <div class="fp-about-grid">
+                <div class="fp-about-card">
+                    <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Farmers market" class="fp-about-img">
+                    <div class="fp-about-content">
+                        <h3>Rooted in Passion</h3>
+                        <p>Founded in 2015 by nutritionist Sarah Johnson, FreshPicks began as a small farmers' market stand with a simple mission: make fresh, organic produce accessible to everyone.</p>
+                        <a href="#" class="fp-learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="fp-about-card">
+                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Juice production" class="fp-about-img">
+                    <div class="fp-about-content">
+                        <h3>Innovation in Freshness</h3>
+                        <p>We pioneered the cold-pressed juice subscription model in our region, ensuring maximum nutrient retention and unparalleled taste.</p>
+                        <a href="#" class="fp-learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="fp-about-card">
+                    <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Delivery service" class="fp-about-img">
+                    <div class="fp-about-content">
+                        <h3>Sustainable Growth</h3>
+                        <p>Our zero-waste packaging initiative and electric delivery fleet set new standards for eco-conscious food distribution.</p>
+                        <a href="#" class="fp-learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section 
+    <section class="fp-team">
+        <div class="fp-container">
+            <div class="fp-section-title">
+                <h2>Meet the Team</h2>
+                <p>The passionate individuals bringing farm-fresh goodness to your table</p>
+            </div>
+            <div class="fp-team-grid">
+                <div class="fp-team-card">
+                    <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson" class="fp-team-img">
+                    <div class="fp-team-info">
+                        <h3>Sarah Johnson</h3>
+                        <p>Founder & CEO</p>
+                        <div class="fp-team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="fp-team-card">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen" class="fp-team-img">
+                    <div class="fp-team-info">
+                        <h3>Michael Chen</h3>
+                        <p>Head of Operations</p>
+                        <div class="fp-team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="fp-team-card">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya Patel" class="fp-team-img">
+                    <div class="fp-team-info">
+                        <h3>Priya Patel</h3>
+                        <p>Head Chef</p>
+                        <div class="fp-team-social">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="fp-team-card">
+                    <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="David Wilson" class="fp-team-img">
+                    <div class="fp-team-info">
+                        <h3>David Wilson</h3>
+                        <p>Farm Relations</p>
+                        <div class="fp-team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="fp-testimonials">
+        <div class="fp-container">
+            <div class="fp-section-title">
+                <h2>What Our Customers Say</h2>
+                <p>Hear from people who've experienced the FreshPicks difference</p>
+            </div>
+            <div class="fp-testimonial-slider">
+                <div class="fp-testimonial">
+                    <p>"The quality of produce from FreshPicks is unmatched. I can taste the difference in every bite, and knowing I'm supporting local farms makes it even better."</p>
+                    <div class="fp-testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Jessica R." class="fp-testimonial-avatar">
+                        <div class="fp-testimonial-author-info">
+                            <h4>Jessica R.</h4>
+                            <p>Customer since 2018</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="fp-testimonial">
+                    <p>"As a busy mom, FreshPicks saves me hours each week. The seasonal boxes introduce my kids to new fruits and veggies they actually enjoy eating!"</p>
+                    <div class="fp-testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/62.jpg" alt="Maria G." class="fp-testimonial-avatar">
+                        <div class="fp-testimonial-author-info">
+                            <h4>Maria G.</h4>
+                            <p>Family Plan Subscriber</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="fp-testimonial">
+                    <p>"The cold-pressed juices helped me reset my eating habits. Now I can't imagine starting my day without a Green Glow from FreshPicks!"</p>
+                    <div class="fp-testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="David T." class="fp-testimonial-avatar">
+                        <div class="fp-testimonial-author-info">
+                            <h4>David T.</h4>
+                            <p>Juice Club Member</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="fp-testimonial">
+                    <p>"Our restaurant switched to FreshPicks for produce last year, and our customers immediately noticed the difference in flavor and quality."</p>
+                    <div class="fp-testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Chef Marcus L." class="fp-testimonial-avatar">
+                        <div class="fp-testimonial-author-info">
+                            <h4>Chef Marcus L.</h4>
+                            <p>Business Partner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="fp-cta">
+        <div class="fp-container">
+            <h2>Ready to Experience Farm-Fresh Living?</h2>
+            <p>Join thousands of happy customers enjoying the convenience and quality of FreshPicks. Your first order comes with our freshness guarantee!</p>
+            <a href="product.html" class="fp-btn-primary">Start Your Order Today</a>
+        </div>
+    </section>
+
+
+
+
+
+
+ <!-- Footer -->
+    <footer class="freshpicks-footer">
+        <div class="container">
+            <div class="freshpicks-footer-grid">
+                <div>
+                    <h3 class="freshpicks-footer-heading">FreshPicks</h3>
+                    <p style="color: #bbb; margin-bottom: 15px;">Your one-stop shop for fresh fruits, vegetables and juices delivered to your doorstep.</p>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="#" style="color: #bbb; font-size: 20px;"><i class="fab fa-facebook"></i></a>
+                        <a href="#" style="color: #bbb; font-size: 20px;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="color: #bbb; font-size: 20px;"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="freshpicks-footer-heading">Quick Links</h3>
+                    <ul class="freshpicks-footer-links">
+                        <li class="freshpicks-footer-link"><a href="#">Home</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">Shop</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">About Us</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">Contact</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="freshpicks-footer-heading">Categories</h3>
+                    <ul class="freshpicks-footer-links">
+                        <li class="freshpicks-footer-link"><a href="#">Fruits</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">Vegetables</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">Fresh Juices</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">Organic Products</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">Seasonal Specials</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="freshpicks-footer-heading">Contact Us</h3>
+                    <ul class="freshpicks-footer-links">
+                        <li class="freshpicks-footer-link"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>123 Fresh Picks, Tamil Nadu</li>
+                        <li class="freshpicks-footer-link"><i class="fas fa-phone" style="margin-right: 8px;"></i> +91 9876543210</li>
+                        <li class="freshpicks-footer-link"><i class="fas fa-envelope" style="margin-right: 8px;"></i> hello@freshpicks.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="freshpicks-footer-bottom">
+                <p>&copy; 2023 FreshPicks. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+     <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

@@ -3,229 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | FreshPicks - Premium Fruits, Vegetables & Fresh Juices</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>freshpicks | Organic Fruits, Vegetables & Fresh Juices</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #4CAF50;
-            --primary-dark: #388E3C;
-            --secondary: #FF9800;
-            --light: #F5F5F5;
-            --dark: #212121;
-            --gray: #757575;
-            --white: #FFFFFF;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--dark);
-            background-color: var(--light);
-            line-height: 1.6;
-        }
-        
-        .navbar-brand img {
-            height: 40px;
-        }
-        
-        .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
-            background-size: cover;
-            background-position: center;
-            color: var(--white);
-            padding: 100px 0;
-            text-align: center;
-        }
-        
-        .section-title {
-            position: relative;
-            margin-bottom: 40px;
-            color: var(--primary-dark);
-        }
-        
-        .section-title:after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: var(--secondary);
-        }
-        
-        .contact-card {
-            background: var(--white);
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            padding: 30px;
-            transition: var(--transition);
-            height: 100%;
-        }
-        
-        .contact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .contact-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        
-        .form-control {
-            border-radius: 5px;
-            border: 1px solid #ddd;
-            padding: 12px 15px;
-            margin-bottom: 20px;
-        }
-        
-        .form-control:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 0.25rem rgba(76, 175, 80, 0.25);
-        }
-        
-        .btn-primary {
-            background-color: var(--primary);
-            border-color: var(--primary);
-            padding: 12px 30px;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-        
-        .btn-primary:hover {
-            background-color: var(--primary-dark);
-            border-color: var(--primary-dark);
-        }
-        
-        .btn-secondary {
-            background-color: var(--secondary);
-            border-color: var(--secondary);
-            padding: 12px 30px;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-        
-        .btn-secondary:hover {
-            background-color: #e68a00;
-            border-color: #e68a00;
-        }
-        
-        .map-container {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-        
-        .bulk-order-card {
-            background: linear-gradient(135deg, rgba(76, 175, 80, 0.1) 0%, rgba(255, 152, 0, 0.1) 100%);
-            border-left: 5px solid var(--secondary);
-        }
-        
-        .feature-icon {
-            color: var(--primary);
-            font-size: 1.5rem;
-            margin-right: 10px;
-        }
-        
-        .footer {
-            background-color: var(--dark);
-            color: var(--white);
-            padding: 50px 0 20px;
-        }
-        
-        .social-icons a {
-            color: var(--white);
-            font-size: 1.2rem;
-            margin-right: 15px;
-            transition: var(--transition);
-        }
-        
-        .social-icons a:hover {
-            color: var(--secondary);
-        }
-        
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            background: var(--primary);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            box-shadow: var(--shadow);
-            z-index: 99;
-            opacity: 0;
-            transition: var(--transition);
-        }
-        
-        .back-to-top.active {
-            opacity: 1;
-        }
-        
-        .back-to-top:hover {
-            background: var(--primary-dark);
-        }
-        
-        @media (max-width: 768px) {
-            .hero-section {
-                padding: 60px 0;
-            }
-            
-            .contact-card {
-                margin-bottom: 30px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+     <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-text">
+                <i class="fas fa-truck"></i> Free delivery on orders over ₹50
+            </div>
+            <div class="top-bar-links">
+                <a href="#"><i class="fas fa-phone"></i> +91 987 987 9087</a>
+                <a href="#"><i class="fas fa-envelope"></i> info@freshpicks.com</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header>
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="https://via.placeholder.com/150x50?text=FreshPicks" alt="FreshPicks Logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Contact</a>
-                    </li>
-                </ul>
-                <div class="ms-3">
-                    <a href="#" class="btn btn-outline-success">Shop Now</a>
+            <div class="main-header">
+                <a href="index.html" class="logo">
+                    <img src="logo.png" alt="logo" class="logo-new"> 
+                </a>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Search for fruits, vegetables, juices...">
+                    <button id="search-btn"><i class="fas fa-search"></i></button>
+                    <div class="search-results" id="search-results"></div>
+                </div>
+                
+                <div class="header-icons">
+                    <a href="#"><i class="fas fa-user"></i></a>
+                    <a href="#"><i class="fas fa-heart"></i></a>
+                    <a href="cart.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">3</span>
+                    </a>
                 </div>
             </div>
         </div>
+    </header>
+
+    <!-- Navigation 
+    <nav style="background-color: white;">
+        <div class="container">
+          <ul class="nav-links mb-0">
+                <li><a href="index.html">Home</a></li>
+                 <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
     </nav>
+
 
     <!-- Hero Section -->
     <section class="hero-section">
-        <div class="container">
-            <h1 class="display-4 fw-bold mb-4">Get in Touch with FreshPicks</h1>
-            <p class="lead mb-5">We're here to answer your questions about our fresh fruits, vegetables, and juices.</p>
-            <div class="d-flex justify-content-center gap-3">
-                <a href="#contact-form" class="btn btn-primary btn-lg">Send a Message</a>
-                <a href="#bulk-order" class="btn btn-secondary btn-lg">Bulk Order Inquiry</a>
+        <div class="floating-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        <div class="container hero-content">
+            <h1 class="display-4 fw-bold mb-4 animate__animated animate__fadeInDown">Connect With FreshPicks</h1>
+            <p class="lead mb-5 animate__animated animate__fadeInDown animate__delay-1s">We're here to help with your fresh produce needs, from daily groceries to large wholesale orders.</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap animate__animated animate__fadeInUp animate__delay-2s">
+                <a href="#contact-form" class="btn btn-primary btn-lg btn-float">
+                    <i class="fas fa-paper-plane me-2"></i> Send Message
+                </a>
+                <a href="#bulk-order" class="btn btn-secondary btn-lg btn-float">
+                    <i class="fas fa-boxes me-2"></i> Bulk Orders
+                </a>
             </div>
         </div>
     </section>
@@ -233,40 +95,51 @@
     <!-- Contact Information -->
     <section class="py-5">
         <div class="container">
-            <h2 class="text-center section-title">Our Contact Information</h2>
+            <div class="text-center mb-5">
+                <h2 class="section-titles animate__animated animate__fadeIn">How Can We Help?</h2>
+                <p class="animate__animated animate__fadeIn animate__delay-1s">Choose your preferred contact method below</p>
+            </div>
             <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="contact-card text-center">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
+                <div class="col-md-4 animate__animated animate__fadeInUp animate-delay-1">
+                    <div class="contact-card text-center h-100">
+                        <div class="contact-icon mx-auto">
+                            <i class="fas fa-comment-dots"></i>
                         </div>
-                        <h3>Our Location</h3>
-                        <p>123 Farm Fresh Avenue<br>Green Valley, CA 90210<br>United States</p>
-                        <a href="#map" class="btn btn-outline-primary">View on Map</a>
+                        <h3>Live Chat</h3>
+                        <p class="mb-4">Get instant answers from our friendly support team. Available 24/7 for your convenience.</p>
+                        <a href="#" class="btn btn-outline-primary btn-float">
+                            <i class="fas fa-comment me-2"></i> Start Chat
+                        </a>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="contact-card text-center">
-                        <div class="contact-icon">
+                <div class="col-md-4 animate__animated animate__fadeInUp animate-delay-2">
+                    <div class="contact-card text-center h-100">
+                        <div class="contact-icon mx-auto">
                             <i class="fas fa-phone-alt"></i>
                         </div>
-                        <h3>Phone Numbers</h3>
-                        <p>Customer Service: <a href="tel:+18005551234">+1 (800) 555-1234</a><br>
-                        Bulk Orders: <a href="tel:+18005554321">+1 (800) 555-4321</a><br>
-                        Fax: +1 (800) 555-5678</p>
-                        <a href="tel:+18005551234" class="btn btn-outline-primary">Call Now</a>
+                        <h3>Call Us</h3>
+                        <p class="mb-4">
+                            <strong>Customer Service:</strong> <a href="tel:+18005551234">+1 (800) 555-1234</a><br>
+                            <strong>Bulk Orders:</strong> <a href="tel:+18005554321">+1 (800) 555-4321</a>
+                        </p>
+                        <a href="tel:+18005551234" class="btn btn-outline-primary btn-float">
+                            <i class="fas fa-phone me-2"></i> Call Now
+                        </a>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="contact-card text-center">
-                        <div class="contact-icon">
+                <div class="col-md-4 animate__animated animate__fadeInUp animate-delay-3">
+                    <div class="contact-card text-center h-100">
+                        <div class="contact-icon mx-auto">
                             <i class="fas fa-envelope"></i>
                         </div>
                         <h3>Email Us</h3>
-                        <p>General Inquiries: <a href="mailto:info@freshpicks.com">info@freshpicks.com</a><br>
-                        Support: <a href="mailto:support@freshpicks.com">support@freshpicks.com</a><br>
-                        Bulk Orders: <a href="mailto:sales@freshpicks.com">sales@freshpicks.com</a></p>
-                        <a href="mailto:info@freshpicks.com" class="btn btn-outline-primary">Email Now</a>
+                        <p class="mb-4">
+                            <strong>General:</strong> <a href="mailto:info@freshpicks.com">info@freshpicks.com</a><br>
+                            <strong>Support:</strong> <a href="mailto:support@freshpicks.com">support@freshpicks.com</a>
+                        </p>
+                        <a href="mailto:info@freshpicks.com" class="btn btn-outline-primary btn-float">
+                            <i class="fas fa-envelope me-2"></i> Email Now
+                        </a>
                     </div>
                 </div>
             </div>
@@ -274,62 +147,77 @@
     </section>
 
     <!-- Contact Form -->
-    <section class="py-5 bg-light" id="contact-form">
+    <section class="py-5" id="contact-form">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <h2 class="section-title">Send Us a Message</h2>
-                    <p>Have questions about our products, delivery, or anything else? Fill out the form and our team will get back to you within 24 hours.</p>
-                    <div class="mt-4">
-                        <div class="d-flex align-items-center mb-3">
-                            <i class="fas fa-check-circle feature-icon"></i>
-                            <div>24/7 Customer Support</div>
-                        </div>
-                        <div class="d-flex align-items-center mb-3">
-                            <i class="fas fa-check-circle feature-icon"></i>
-                            <div>Farm-fresh quality guarantee</div>
-                        </div>
-                        <div class="d-flex align-items-center mb-3">
-                            <i class="fas fa-check-circle feature-icon"></i>
-                            <div>Flexible delivery options</div>
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <h2 class="section-titles mb-4">Let's Talk Fresh</h2>
+                    <p class="mb-4">Have questions about our farm-fresh produce, delivery options, or anything else? Our team is ready to help.</p>
+                    
+                    <div class="glass-card p-4 mb-4">
+                        <div class="d-flex align-items-start mb-3">
+                            <i class="fas fa-clock feature-icon mt-1"></i>
+                            <div>
+                                <h5 class="mb-1">Response Time</h5>
+                                <p class="mb-0">Typically replies within 1 hour during business hours</p>
+                            </div>
                         </div>
                     </div>
+                    
+                    <div class="glass-card p-4">
+                        <h5 class="mb-3">Why contact us?</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Product recommendations</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Delivery scheduling</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Quality concerns</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Subscription questions</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Feedback & suggestions</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="contact-card">
+                <div class="col-lg-7">
+                    <div class="contact-card p-4 p-lg-5">
                         <form id="contactForm">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="firstName" placeholder="First Name" required>
+                                    <div class="floating-label">
+                                        <input type="text" class="form-control" id="firstName" placeholder=" " required>
+                                        <label for="firstName">First Name</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="lastName" placeholder="Last Name" required>
+                                    <div class="floating-label">
+                                        <input type="text" class="form-control" id="lastName" placeholder=" " required>
+                                        <label for="lastName">Last Name</label>
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control" id="email" placeholder="Email Address" required>
+                            <div class="floating-label">
+                                <input type="email" class="form-control" id="email" placeholder=" " required>
+                                <label for="email">Email Address</label>
                             </div>
-                            <div class="form-group">
-                                <input type="tel" class="form-control" id="phone" placeholder="Phone Number">
+                            <div class="floating-label">
+                                <input type="tel" class="form-control" id="phone" placeholder=" ">
+                                <label for="phone">Phone Number (optional)</label>
                             </div>
-                            <div class="form-group">
+                            <div class="floating-label">
                                 <select class="form-control" id="subject" required>
-                                    <option value="" disabled selected>Select Subject</option>
+                                    <option value="" disabled selected></option>
                                     <option value="general">General Inquiry</option>
                                     <option value="product">Product Question</option>
                                     <option value="delivery">Delivery Inquiry</option>
                                     <option value="feedback">Feedback/Suggestion</option>
                                     <option value="other">Other</option>
                                 </select>
+                                <label for="subject">Subject</label>
                             </div>
-                            <div class="form-group">
-                                <textarea class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
+                            <div class="floating-label">
+                                <textarea class="form-control" id="message" rows="4" placeholder=" " required></textarea>
+                                <label for="message">Your Message</label>
                             </div>
-                            <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                            <button type="submit" class="btn btn-primary w-100 btn-float py-3">
+                                <i class="fas fa-paper-plane me-2"></i> Send Message
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -338,84 +226,142 @@
     </section>
 
     <!-- Bulk Order Section -->
-    <section class="py-5" id="bulk-order">
+    <section class="py-5 bg-light" id="bulk-order">
         <div class="container">
-            <h2 class="text-center section-title">Bulk Order Inquiry</h2>
-            <p class="text-center mb-5">Are you a restaurant, hotel, corporate office, or event planner? We offer special wholesale prices for bulk orders of our fresh produce and juices.</p>
+            <div class="text-center mb-5">
+                <h2 class="section-titles">Bulk & Wholesale Orders</h2>
+                <p>Special pricing and services for restaurants, caterers, and businesses</p>
+            </div>
             
-            <div class="row">
-                <div class="col-lg-6 mb-4 mb-lg-0">
+            <div class="row g-4">
+                <div class="col-lg-6">
                     <div class="contact-card bulk-order-card p-4 h-100">
-                        <h3 class="mb-4">Why Choose FreshPicks for Bulk Orders?</h3>
-                        <ul class="list-unstyled">
-                            <li class="mb-3">
-                                <div class="d-flex">
-                                    <i class="fas fa-check-circle text-success mt-1 me-2"></i>
-                                    <div>Competitive wholesale pricing with volume discounts</div>
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="contact-icon">
+                                <i class="fas fa-boxes"></i>
+                            </div>
+                            <h3 class="mb-0 ms-3">Wholesale Benefits</h3>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="d-flex align-items-start">
+                                    <i class="fas fa-percentage feature-icon mt-1"></i>
+                                    <div>
+                                        <h5 class="mb-1">Volume Discounts</h5>
+                                        <p class="small mb-0">Save up to 30% on large orders</p>
+                                    </div>
                                 </div>
-                            </li>
-                            <li class="mb-3">
-                                <div class="d-flex">
-                                    <i class="fas fa-check-circle text-success mt-1 me-2"></i>
-                                    <div>Farm-direct sourcing ensures freshest quality</div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="d-flex align-items-start">
+                                    <i class="fas fa-truck feature-icon mt-1"></i>
+                                    <div>
+                                        <h5 class="mb-1">Priority Delivery</h5>
+                                        <p class="small mb-0">Early morning time slots</p>
+                                    </div>
                                 </div>
-                            </li>
-                            <li class="mb-3">
-                                <div class="d-flex">
-                                    <i class="fas fa-check-circle text-success mt-1 me-2"></i>
-                                    <div>Flexible delivery schedules to meet your needs</div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="d-flex align-items-start">
+                                    <i class="fas fa-calendar-alt feature-icon mt-1"></i>
+                                    <div>
+                                        <h5 class="mb-1">Scheduled Deliveries</h5>
+                                        <p class="small mb-0">Set your weekly delivery days</p>
+                                    </div>
                                 </div>
-                            </li>
-                            <li class="mb-3">
-                                <div class="d-flex">
-                                    <i class="fas fa-check-circle text-success mt-1 me-2"></i>
-                                    <div>Custom packaging and labeling options</div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="d-flex align-items-start">
+                                    <i class="fas fa-user-tie feature-icon mt-1"></i>
+                                    <div>
+                                        <h5 class="mb-1">Dedicated Rep</h5>
+                                        <p class="small mb-0">Personal account manager</p>
+                                    </div>
                                 </div>
-                            </li>
-                            <li class="mb-3">
-                                <div class="d-flex">
-                                    <i class="fas fa-check-circle text-success mt-1 me-2"></i>
-                                    <div>Dedicated account manager for bulk orders</div>
-                                </div>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 pt-3 border-top">
+                            <h5>Our Bulk Clients Include:</h5>
+                            <div class="d-flex flex-wrap align-items-center gap-4 mt-3">
+                                <img src="https://via.placeholder.com/80x40?text=Restaurant" alt="Client" class="img-fluid" style="filter: grayscale(100%) brightness(1.5); opacity: 0.8;">
+                                <img src="https://via.placeholder.com/80x40?text=Hotel" alt="Client" class="img-fluid" style="filter: grayscale(100%) brightness(1.5); opacity: 0.8;">
+                                <img src="https://via.placeholder.com/80x40?text=Cafe" alt="Client" class="img-fluid" style="filter: grayscale(100%) brightness(1.5); opacity: 0.8;">
+                                <img src="https://via.placeholder.com/80x40?text=School" alt="Client" class="img-fluid" style="filter: grayscale(100%) brightness(1.5); opacity: 0.8;">
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="contact-card">
-                        <h3 class="mb-4">Request a Bulk Order Quote</h3>
+                    <div class="contact-card p-4 h-100">
+                        <h3 class="mb-4">Request Wholesale Pricing</h3>
                         <form id="bulkOrderForm">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="businessName" placeholder="Business Name" required>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="floating-label">
+                                        <input type="text" class="form-control" id="businessName" placeholder=" " required>
+                                        <label for="businessName">Business Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="floating-label">
+                                        <input type="text" class="form-control" id="contactPerson" placeholder=" " required>
+                                        <label for="contactPerson">Contact Person</label>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="contactPerson" placeholder="Contact Person" required>
+                            <div class="floating-label">
+                                <input type="email" class="form-control" id="businessEmail" placeholder=" " required>
+                                <label for="businessEmail">Business Email</label>
                             </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control" id="businessEmail" placeholder="Business Email" required>
+                            <div class="floating-label">
+                                <input type="tel" class="form-control" id="businessPhone" placeholder=" " required>
+                                <label for="businessPhone">Business Phone</label>
                             </div>
-                            <div class="form-group">
-                                <input type="tel" class="form-control" id="businessPhone" placeholder="Business Phone" required>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="floating-label">
+                                        <select class="form-control" id="businessType" required>
+                                            <option value="" disabled selected></option>
+                                            <option value="restaurant">Restaurant/Cafe</option>
+                                            <option value="hotel">Hotel/Resort</option>
+                                            <option value="corporate">Corporate Office</option>
+                                            <option value="school">School/University</option>
+                                            <option value="catering">Catering Service</option>
+                                            <option value="event">Event/Wedding</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                        <label for="businessType">Business Type</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="floating-label">
+                                        <select class="form-control" id="orderFrequency">
+                                            <option value="" disabled selected></option>
+                                            <option value="weekly">Weekly</option>
+                                            <option value="biweekly">Bi-Weekly</option>
+                                            <option value="monthly">Monthly</option>
+                                            <option value="onetime">One-Time</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                        <label for="orderFrequency">Order Frequency</label>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <select class="form-control" id="businessType" required>
-                                    <option value="" disabled selected>Business Type</option>
-                                    <option value="restaurant">Restaurant/Cafe</option>
-                                    <option value="hotel">Hotel/Resort</option>
-                                    <option value="corporate">Corporate Office</option>
-                                    <option value="school">School/University</option>
-                                    <option value="catering">Catering Service</option>
-                                    <option value="event">Event/Wedding</option>
-                                    <option value="other">Other</option>
-                                </select>
+                            <div class="floating-label">
+                                <textarea class="form-control" id="orderDetails" rows="2" placeholder=" " required></textarea>
+                                <label for="orderDetails">Products & Quantities Needed</label>
                             </div>
-                            <div class="form-group">
-                                <textarea class="form-control" id="orderDetails" rows="3" placeholder="Tell us about your order (products, quantities, frequency)" required></textarea>
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox" id="newsletterCheck">
+                                <label class="form-check-label small" for="newsletterCheck">
+                                    Subscribe to our wholesale newsletter for special offers
+                                </label>
                             </div>
-                            <div class="form-group">
-                                <textarea class="form-control" id="specialRequirements" rows="2" placeholder="Any special requirements?"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-secondary w-100">Request Quote</button>
+                            <button type="submit" class="btn btn-secondary w-100 btn-float py-3">
+                                <i class="fas fa-file-invoice-dollar me-2"></i> Request Quote
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -423,35 +369,55 @@
         </div>
     </section>
 
-    <!-- Map Section -->
-    <section class="py-5 bg-light" id="map">
+    <!-- Map & Visit Section -->
+    <section class="py-5">
         <div class="container">
-            <h2 class="text-center section-title">Our Location</h2>
-            <p class="text-center mb-5">Visit our headquarters or one of our local farm partners</p>
-            <div class="row">
-                <div class="col-lg-6 mb-4 mb-lg-0">
+            <div class="text-center mb-5">
+                <h2 class="section-titles">Visit Our Farm</h2>
+                <p>See where the freshness begins</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-7">
                     <div class="map-container">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215573291234!2d-73.987844924164!3d40.74844047138982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1689876523517!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="contact-card h-100">
-                        <h3 class="mb-4">Visit Us</h3>
-                        <p>Our headquarters is open Monday through Friday from 8:00 AM to 5:00 PM for business inquiries and wholesale orders.</p>
-                        
-                        <h4 class="mt-4">Farm Tour Information</h4>
-                        <p>We offer guided tours of our partner farms on select weekends. Experience firsthand where your food comes from and how we maintain our high standards of quality and sustainability.</p>
-                        
-                        <div class="mt-4">
-                            <h5>Upcoming Tour Dates:</h5>
-                            <ul>
-                                <li>June 10, 2023 - Organic Fruit Orchard Tour</li>
-                                <li>June 24, 2023 - Vegetable Farm & Greenhouse Tour</li>
-                                <li>July 8, 2023 - Juice Production Facility Tour</li>
-                            </ul>
-                            <p class="mt-3">Tours must be booked at least 72 hours in advance.</p>
-                            <a href="#" class="btn btn-outline-primary mt-2">Book a Farm Tour</a>
+                <div class="col-lg-5">
+                    <div class="contact-card h-100 p-4">
+                        <h3 class="mb-4">Farm Visit Information</h3>
+                        <div class="d-flex align-items-start mb-4">
+                            <i class="fas fa-map-marker-alt feature-icon mt-1"></i>
+                            <div>
+                                <h5 class="mb-1">Location</h5>
+                                <p class="mb-0">123 Organic Farm Road<br>Green Valley, CA 90210</p>
+                            </div>
                         </div>
+                        
+                        <div class="d-flex align-items-start mb-4">
+                            <i class="fas fa-clock feature-icon mt-1"></i>
+                            <div>
+                                <h5 class="mb-1">Tour Hours</h5>
+                                <p class="mb-0">Monday - Friday: 9AM - 3PM<br>Saturday: 10AM - 2PM<br>Closed Sundays</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-start mb-4">
+                            <i class="fas fa-info-circle feature-icon mt-1"></i>
+                            <div>
+                                <h5 class="mb-1">Tour Details</h5>
+                                <ul class="mb-0 ps-3">
+                                    <li>1.5 hour guided walking tour</li>
+                                    <li>Learn about organic farming</li>
+                                    <li>Seasonal fruit tasting</li>
+                                    <li>10% discount in farm store after tour</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="btn btn-outline-primary w-100 btn-float mt-3">
+                            <i class="fas fa-calendar-check me-2"></i> Book a Tour
+                        </a>
                     </div>
                 </div>
             </div>
@@ -459,155 +425,148 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="py-5">
+    <section class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center section-title">Frequently Asked Questions</h2>
-            <p class="text-center mb-5">Find quick answers to common questions about our products and services</p>
+            <div class="text-center mb-5">
+                <h2 class="section-titles">Common Questions</h2>
+                <p>Quick answers to our most frequently asked questions</p>
+            </div>
             
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="accordion" id="faqAccordion">
-                        <div class="accordion-item mb-3 border-0 shadow-sm">
-                            <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                                    What are your delivery hours and areas?
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    We deliver Monday through Saturday from 8:00 AM to 8:00 PM. Our delivery area currently covers all major metropolitan areas within a 50-mile radius of our distribution centers. You can check if we deliver to your area by entering your zip code during checkout.
-                                </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h5 class="mb-0">What are your delivery hours and areas?</h5>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-content">
+                            <div class="faq-content-inner">
+                                <p>We deliver Monday through Saturday from 8:00 AM to 8:00 PM. Our delivery area currently covers all major metropolitan areas within a 50-mile radius of our distribution centers. You can check if we deliver to your area by entering your zip code during checkout.</p>
                             </div>
                         </div>
-                        
-                        <div class="accordion-item mb-3 border-0 shadow-sm">
-                            <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-                                    How do I place a bulk order?
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    You can place bulk orders through our dedicated bulk order form above, by calling our bulk order hotline at +1 (800) 555-4321, or by emailing sales@freshpicks.com. Our sales team will work with you to understand your requirements and provide a customized quote.
-                                </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h5 class="mb-0">How do I place a bulk order?</h5>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-content">
+                            <div class="faq-content-inner">
+                                <p>You can place bulk orders through our dedicated bulk order form above, by calling our bulk order hotline at +1 (800) 555-4321, or by emailing sales@freshpicks.com. Our sales team will work with you to understand your requirements and provide a customized quote.</p>
                             </div>
                         </div>
-                        
-                        <div class="accordion-item mb-3 border-0 shadow-sm">
-                            <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
-                                    What is your freshness guarantee?
-                                </button>
-                            </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    We guarantee that all our products are delivered at peak freshness. If you're not completely satisfied with the freshness of any item, contact us within 24 hours of delivery for a full refund or replacement. Our fruits and vegetables are sourced directly from farms and delivered within 24-48 hours of harvest.
-                                </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h5 class="mb-0">What is your freshness guarantee?</h5>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-content">
+                            <div class="faq-content-inner">
+                                <p>We guarantee that all our products are delivered at peak freshness. If you're not completely satisfied with the freshness of any item, contact us within 24 hours of delivery for a full refund or replacement. Our fruits and vegetables are sourced directly from farms and delivered within 24-48 hours of harvest.</p>
                             </div>
                         </div>
-                        
-                        <div class="accordion-item mb-3 border-0 shadow-sm">
-                            <h2 class="accordion-header" id="headingFour">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
-                                    Do you offer organic products?
-                                </button>
-                            </h2>
-                            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    Yes! We have a wide selection of certified organic fruits, vegetables, and juices. All organic products are clearly labeled on our website and packaging. Our organic produce comes from certified farms that meet USDA organic standards.
-                                </div>
-                            </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h5 class="mb-0">Do you offer organic products?</h5>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
                         </div>
-                        
-                        <div class="accordion-item mb-3 border-0 shadow-sm">
-                            <h2 class="accordion-header" id="headingFive">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">
-                                    What payment methods do you accept for bulk orders?
-                                </button>
-                            </h2>
-                            <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    For bulk orders, we accept all major credit cards, bank transfers, and checks. Established wholesale customers may qualify for net-30 payment terms. All payment details will be included in your wholesale agreement.
-                                </div>
+                        <div class="faq-content">
+                            <div class="faq-content-inner">
+                                <p>Yes! We have a wide selection of certified organic fruits, vegetables, and juices. All organic products are clearly labeled on our website and packaging. Our organic produce comes from certified farms that meet USDA organic standards.</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="text-center mt-5">
-                        <p>Didn't find your answer? <a href="#contact-form" class="text-primary">Contact us directly</a> and we'll be happy to help.</p>
+                        <p>Didn't find your answer? <a href="#contact-form" class="text-primary fw-bold">Contact us directly</a></p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- CTA Section -->
+    <section class="py-5" style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);">
+        <div class="container text-center text-white">
+            <h2 class="display-5 fw-bold mb-4">Ready to Experience FreshPicks?</h2>
+            <p class="lead mb-5">Join thousands of satisfied customers enjoying farm-fresh produce delivered to their door.</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="#" class="btn btn-light btn-lg btn-float px-4 py-3">
+                    <i class="fas fa-shopping-basket me-2"></i> Shop Now
+                </a>
+                <a href="#contact-form" class="btn btn-outline-light btn-lg btn-float px-4 py-3">
+                    <i class="fas fa-question-circle me-2"></i> Ask a Question
+                </a>
+            </div>
+        </div>
+    </section>
+
+  
+
+    
+    <!-- Modern Footer -->
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="freshpicks-footer">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4 mb-lg-0">
-                    <img src="https://via.placeholder.com/150x50?text=FreshPicks" alt="FreshPicks Logo" class="mb-3">
-                    <p>FreshPicks brings farm-fresh fruits, vegetables, and juices directly to your doorstep. We're committed to quality, freshness, and sustainable farming practices.</p>
-                    <div class="social-icons mt-4">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+            <div class="freshpicks-footer-grid">
+                <div>
+                    <h3 class="freshpicks-footer-heading">FreshPicks</h3>
+                    <p style="color: #bbb; margin-bottom: 15px;">Your one-stop shop for fresh fruits, vegetables and juices delivered to your doorstep.</p>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="#" style="color: #bbb; font-size: 20px;"><i class="fab fa-facebook"></i></a>
+                        <a href="#" style="color: #bbb; font-size: 20px;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="color: #bbb; font-size: 20px;"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-                    <h5>Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="text-white">Home</a></li>
-                        <li class="mb-2"><a href="#" class="text-white">Shop</a></li>
-                        <li class="mb-2"><a href="#" class="text-white">About Us</a></li>
-                        <li class="mb-2"><a href="#" class="text-white">Contact</a></li>
-                        <li class="mb-2"><a href="#" class="text-white">Blog</a></li>
+                <div>
+                    <h3 class="freshpicks-footer-heading">Quick Links</h3>
+                    <ul class="freshpicks-footer-links">
+                        <li class="freshpicks-footer-link"><a href="#">Home</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">Shop</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">About Us</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">Contact</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">FAQ</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-                    <h5>Products</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="text-white">Fresh Fruits</a></li>
-                        <li class="mb-2"><a href="#" class="text-white">Vegetables</a></li>
-                        <li class="mb-2"><a href="#" class="text-white">Fresh Juices</a></li>
-                        <li class="mb-2"><a href="#" class="text-white">Organic Produce</a></li>
-                        <li class="mb-2"><a href="#" class="text-white">Seasonal Specials</a></li>
+                <div>
+                    <h3 class="freshpicks-footer-heading">Categories</h3>
+                    <ul class="freshpicks-footer-links">
+                        <li class="freshpicks-footer-link"><a href="#">Fruits</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">Vegetables</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">Fresh Juices</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">Organic Products</a></li>
+                        <li class="freshpicks-footer-link"><a href="#">Seasonal Specials</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-4">
-                    <h5>Newsletter</h5>
-                    <p>Subscribe to get updates on new products, seasonal offers, and farming news.</p>
-                    <form class="mt-3">
-                        <div class="input-group mb-3">
-                            <input type="email" class="form-control" placeholder="Your Email" aria-label="Your Email">
-                            <button class="btn btn-primary" type="button">Subscribe</button>
-                        </div>
-                    </form>
-                    <p class="small">We respect your privacy. Unsubscribe at any time.</p>
+                <div>
+                    <h3 class="freshpicks-footer-heading">Contact Us</h3>
+                    <ul class="freshpicks-footer-links">
+                        <li class="freshpicks-footer-link"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>123 Fresh Picks, Tamil Nadu</li>
+                        <li class="freshpicks-footer-link"><i class="fas fa-phone" style="margin-right: 8px;"></i> +91 9876543210</li>
+                        <li class="freshpicks-footer-link"><i class="fas fa-envelope" style="margin-right: 8px;"></i> hello@freshpicks.com</li>
+                    </ul>
                 </div>
             </div>
-            <hr class="mt-4 mb-3" style="border-color: rgba(255,255,255,0.1);">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start">
-                    <p class="small mb-0">&copy; 2023 FreshPicks. All rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <p class="small mb-0">
-                        <a href="#" class="text-white">Privacy Policy</a> | 
-                        <a href="#" class="text-white">Terms of Service</a> | 
-                        <a href="#" class="text-white">Sitemap</a>
-                    </p>
-                </div>
+            <div class="freshpicks-footer-bottom">
+                <p>&copy; 2023 FreshPicks. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+     <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Scripts -->
+    <script src="assets/js/script.js"></script>
+
+        <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // Back to top button
@@ -630,16 +589,55 @@
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             // Here you would typically send the form data to your server
-            alert('Thank you for your message! We will get back to you soon.');
+            Swal.fire({
+                icon: 'success',
+                title: 'Message Sent!',
+                text: 'Thank you for your message! We will get back to you soon.',
+                confirmButtonColor: '#4CAF50'
+            });
             this.reset();
         });
         
         document.getElementById('bulkOrderForm').addEventListener('submit', function(e) {
             e.preventDefault();
             // Here you would typically send the form data to your server
-            alert('Thank you for your bulk order inquiry! Our sales team will contact you within 24 hours.');
+            Swal.fire({
+                icon: 'success',
+                title: 'Request Received!',
+                text: 'Thank you for your bulk order inquiry! Our sales team will contact you within 24 hours.',
+                confirmButtonColor: '#FF9800'
+            });
             this.reset();
         });
+        
+        // FAQ functionality
+        document.querySelectorAll('.faq-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const faqItem = header.parentElement;
+                const content = header.nextElementSibling;
+                
+                // Close all other items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                        item.classList.remove('active');
+                        item.querySelector('.faq-content').style.maxHeight = null;
+                    }
+                });
+                
+                // Toggle current item
+                faqItem.classList.toggle('active');
+                if (faqItem.classList.contains('active')) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                } else {
+                    content.style.maxHeight = null;
+                }
+            });
+        });
+        
+        // Open first FAQ by default
+        document.querySelector('.faq-item').classList.add('active');
+        document.querySelector('.faq-item .faq-content').style.maxHeight = 
+            document.querySelector('.faq-item .faq-content').scrollHeight + 'px';
         
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -657,6 +655,33 @@
                 }
             });
         });
+        
+        // Animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate__animated');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    const animationClass = element.getAttribute('data-animation');
+                    element.classList.add(animationClass);
+                }
+            });
+        }
+        
+        // Run once on load
+        animateOnScroll();
+        
+        // Run on scroll
+        window.addEventListener('scroll', animateOnScroll);
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 </html>
+
+
+
+

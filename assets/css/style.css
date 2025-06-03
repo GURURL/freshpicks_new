@@ -546,7 +546,62 @@
             background-color: var(--primary);
             color: var(--white);
         }
-
+   /* Additional CSS for filters */
+        .filter-section {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .filter-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+        }
+        .form-check-label {
+            cursor: pointer;
+        }
+        .form-range::-webkit-slider-thumb {
+            background: #28a745;
+        }
+        .form-range::-moz-range-thumb {
+            background: #28a745;
+        }
+        .form-range::-ms-thumb {
+            background: #28a745;
+        }
+        .price-range-values {
+            display: flex;
+            justify-content: space-between;
+            margin-top: -10px;
+        }
+        .category-tag {
+            display: inline-block;
+            padding: 5px 12px;
+            margin: 0 5px 5px 0;
+            background: #f1f1f1;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        .category-tag:hover, .category-tag.active {
+            background: #28a745;
+            color: white;
+        }
+        .reset-filters {
+            color: #dc3545;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        .reset-filters:hover {
+            text-decoration: underline;
+        }
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -911,6 +966,69 @@
         }
 
 
+        /* Cart Confirmation Modal Styles */
+#cartConfirmationModal .modal-content {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#cartConfirmationModal .modal-header {
+    background-color: #28a745;
+    color: white;
+    border-bottom: none;
+}
+
+#cartConfirmationModal .modal-body {
+    padding: 20px;
+    text-align: center;
+}
+
+#cartConfirmationModal .modal-footer {
+    border-top: none;
+    justify-content: center;
+}
+
+#cartConfirmationModal .btn-primary {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+#cartConfirmationModal .btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.cart-confirmation-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.cart-confirmation-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.cart-confirmation-details {
+    text-align: left;
+}
+
+.cart-confirmation-name {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.cart-confirmation-price {
+    color: #28a745;
+    font-weight: 600;
+}
+
+.cart-confirmation-quantity {
+    color: #6c757d;
+}
    
 
 

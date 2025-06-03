@@ -84,7 +84,6 @@
                         <span class="category-tag" data-category="fruits">Fruits</span>
                        
                         <span class="category-tag" data-category="juices">Fresh Juices</span>
-                        <span class="category-tag" data-category="organic">Organic</span>
                     </div>
                 </div>
 
@@ -152,20 +151,7 @@
                     <!-- Product cards will be dynamically inserted here -->
                 </div>
 
-                <!-- Pagination -->
-                <div aria-label="Page" class="mt-5">
-                    <ul class="pagination justify-content-end">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1">Previous</a>
-                        </li>
-                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">Next</a>
-                        </li>
-                    </ul>
-                </div>
+
             </div>
         </div>
     </div>
@@ -242,10 +228,101 @@
 
     
     <script>
-        // Sample product data
+            // Sample product data
         const products = [
-            {
+             {
                 id: 1,
+                name: "Fresh Carrots",
+                category: "vegetables",
+                price: 1.49,
+                oldPrice: 1.99,
+                image: "https://images.unsplash.com/photo-1447175008436-054170c2e979?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                rating: 4.2,
+                stock: 15,
+                organic: false,
+                description: "Sweet and crunchy carrots, perfect for salads, snacks, or cooking. Locally grown and freshly harvested.",
+                benefits: "Rich in beta-carotene, fiber, vitamin K1, and antioxidants. Good for eye health."
+            },
+          {
+                id: 2,
+                name: "Organic Spinach",
+                category: "vegetables",
+                price: 3.29,
+                oldPrice: 3.99,
+                image: "https://images.unsplash.com/photo-1576045057995-568f588f82fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                rating: 4.3,
+                stock: 12,
+                organic: true,
+                description: "Tender organic spinach leaves, perfect for salads, smoothies, or cooking. Grown with sustainable methods.",
+                benefits: "High in iron, calcium, magnesium, and vitamins A, C, and K. Supports bone health."
+            },
+           {
+                id: 3,
+                name: "Organic Tomatoes",
+                category: "vegetables",
+                price: 2.79,
+                oldPrice: 3.29,
+                image: "assets/images/vegitables.jpg",
+                rating: 4.4,
+                stock: 14,
+                organic: true,
+                description: "Vine-ripened organic tomatoes with rich flavor and perfect texture. Great for salads, sauces, or sandwiches.",
+                benefits: "Excellent source of lycopene, vitamin C, potassium, and folate. Supports heart health."
+            },
+              {
+                id: 4,
+                name: " Apples",
+                category: "fruits",
+                price: 2.99,
+                oldPrice: 3.49,
+                image: "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                rating: 4.5,
+                stock: 10,
+                organic: true,
+                description: "Crisp and juicy organic apples grown without synthetic pesticides or fertilizers. Perfect for snacking or baking.",
+                benefits: "High in fiber, vitamin C, and antioxidants. Supports heart health and digestion."
+            },
+            {
+                id: 5,
+                name: "Fresh Orange",
+                category: "fruits",
+                price: 1.49,
+                oldPrice: 1.99,
+                image: "assets/images/orange.jpeg",
+                rating: 4.2,
+                stock: 15,
+                organic: false,
+                description: "Sweet and crunchy carrots, perfect for salads, snacks, or cooking. Locally grown and freshly harvested.",
+                benefits: "Rich in beta-carotene, fiber, vitamin K1, and antioxidants. Good for eye health."
+            },
+            {
+                id: 6,
+                name: "Bananas",
+                category: "fruits",
+                price: 4.99,
+                oldPrice: 5.49,
+                image: "assets/images/banana.jpeg",
+                rating: 4.7,
+                stock: 8,
+                organic: true,
+                description: "100% pure squeezed orange juice with no added sugars or preservatives. Packed with vitamin C.",
+                benefits: "Boosts immune system, improves skin health, and provides natural energy."
+            },
+            {
+                id: 7,
+                name: "Grapes",
+                category: "fruits",
+                price: 3.29,
+                oldPrice: 3.99,
+                image: "assets/images/grapes.jpg",
+                rating: 4.3,
+                stock: 12,
+                organic: true,
+                description: "Tender organic spinach leaves, perfect for salads, smoothies, or cooking. Grown with sustainable methods.",
+                benefits: "High in iron, calcium, magnesium, and vitamins A, C, and K. Supports bone health."
+            },
+             {
+                id: 8,
                 name: "Orange Juice",
                 category: "juice",
                 price: 2.99,
@@ -258,7 +335,7 @@
                 benefits: "High in fiber, vitamin C, and antioxidants. Supports heart health and digestion."
             },
             {
-                id: 2,
+                id: 9,
                 name: "pomegranate Juice",
                 category: "juices",
                 price: 4.99,
@@ -271,7 +348,7 @@
                 benefits: "Boosts immune system, improves skin health, and provides natural energy."
             },
             {
-                id: 3,
+                id: 10,
                 name: "Stawberry Juice",
                 category: "juices",
                 price: 5.49,
@@ -283,6 +360,7 @@
                 description: "Nutrient-packed green juice with kale, spinach, cucumber, apple, and lemon. Cold-pressed for maximum nutrition.",
                 benefits: "Detoxifying, alkalizing, and packed with vitamins, minerals, and chlorophyll."
             },
+
 
         ];
 
@@ -390,7 +468,7 @@
                                 <input type="text" class="quantity-input" id="quantity-${product.id}" value="1" readonly>
                                 <button class="quantity-btn" onclick="adjustQuantity(${product.id}, 1)">+</button>
                             </div>
-                            <button class="btn btn-primary btn-lg" ${product.stock === 0 ? 'disabled' : ''} onclick="addToCart(${product.id}, document.getElementById('quantity-${product.id}').value)">
+                            <button class="btn btn-primary btn-lg" ${product.stock === 0 ? 'disabled' : ''} onclick="location.href='cart.html'">
                                 <i class="fas fa-shopping-cart me-2"></i> Add to Cart
                             </button>
                         </div>

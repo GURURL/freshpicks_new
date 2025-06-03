@@ -3,15 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>freshpicks | Organic Fruits, Vegetables & Fresh Juices</title>
+    <title>freshpicks | All Organic Products</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-     <!-- Bootstrap 5 CSS -->
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
+    <style>
+        /* Additional styles for all products page */
+        .category-tag {
+            display: inline-block;
+            padding: 5px 15px;
+            margin: 0 5px 5px 0;
+            border-radius: 20px;
+            background-color: #f0f0f0;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .category-tag.active {
+            background-color: #28a745;
+            color: white;
+        }
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #dc3545;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+        .organic-badge {
+            background-color: #28a745;
+        }
+        .exotic-badge {
+            background-color: #17a2b8;
+        }
+        .coldpressed-badge {
+            background-color: #ffc107;
+            color: #212529;
+        }
+        .product-size-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #6c757d;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+        .product-card {
+            position: relative;
+            transition: transform 0.3s;
+            border: none;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .product-img {
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .product-card:hover .product-img {
+            transform: scale(1.05);
+        }
+        .product-price {
+            font-weight: bold;
+            color: #28a745;
+            font-size: 1.1rem;
+        }
+        .product-old-price {
+            text-decoration: line-through;
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-left: 5px;
+        }
+        .view-detail-btn {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+        }
+        .add-to-cart-btn {
+            background-color: #28a745;
+            color: white;
+        }
+        .add-to-cart-btn:disabled {
+            background-color: #6c757d;
+        }
+        .reset-filters {
+            margin-top: 15px;
+            color: #17a2b8;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .reset-filters:hover {
+            text-decoration: underline;
+        }
+        .filter-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .filter-section {
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
     <!-- Top Bar -->
@@ -40,7 +147,7 @@
                 </button>
                 
                 <div class="search-bar">
-                    <input type="text" id="search-input" placeholder="Search for fruits, vegetables, juices...">
+                    <input type="text" id="search-input" placeholder="Search for products...">
                     <button id="search-btn"><i class="fas fa-search"></i></button>
                     <div class="search-results" id="search-results"></div>
                 </div>
@@ -60,16 +167,14 @@
     <!-- Navigation -->
     <nav>
         <div class="container">
-          <ul class="nav-links mb-0">
+            <ul class="nav-links mb-0">
                 <li><a href="index.html">Home</a></li>
-                 <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
                 <li><a href="product.html">Products</a></li>
-              
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
-
 
     <!-- Main Content -->
     <div class="container py-5">
@@ -79,21 +184,24 @@
                 <div class="filter-section mb-4">
                     <h5 class="filter-title">Categories</h5>
                     <div class="mb-3">
-                        <span class="category-tag active" data-category="all">All Products</span>
-                         <span class="category-tag" data-category="vegetables">Vegetables</span>
-                        <span class="category-tag" data-category="fruits">Fruits</span>
-                        <span class="category-tag" data-category="juices">Fresh Juices</span>
-                        <span class="category-tag" data-category="organic">Organic</span>
+                        <div class="category-tag active" data-category="all">All Products</div>
+                        <div class="category-tag" data-category="vegetables">Vegetables</div>
+                        <div class="category-tag" data-category="fruits">Fruits</div>
+                        <div class="category-tag" data-category="juices">Juices</div>
+                        <div class="category-tag" data-category="smoothies">Smoothies</div>
                     </div>
                 </div>
 
                 <div class="filter-section mb-4">
                     <h5 class="filter-title">Price Range</h5>
                     <div class="mb-3">
-                        <input type="range" class="form-range" id="priceRange" min="0" max="100" step="5">
-                        <div class="d-flex justify-content-between">
+                        <input type="range" class="form-range" id="priceRange" min="0" max="150" step="5" value="150">
+                        <div class="price-range-values">
                             <span>₹0</span>
-                            <span>₹100</span>
+                            <span>₹150</span>
+                        </div>
+                        <div class="mt-2">
+                            <small>Selected: ₹<span id="selectedPrice">0</span> - ₹<span id="maxPrice">150</span></small>
                         </div>
                     </div>
                 </div>
@@ -111,18 +219,29 @@
                 </div>
 
                 <div class="filter-section">
-                    <h5 class="filter-title">Dietary</h5>
+                    <h5 class="filter-title">Dietary & Features</h5>
                     <div class="form-check mb-2">
                         <input class="form-check-input" type="checkbox" id="organic">
                         <label class="form-check-label" for="organic">Organic</label>
                     </div>
                     <div class="form-check mb-2">
-                        <input class="form-check-input" type="checkbox" id="glutenFree">
-                        <label class="form-check-label" for="glutenFree">Gluten Free</label>
+                        <input class="form-check-input" type="checkbox" id="seasonal">
+                        <label class="form-check-label" for="seasonal">Seasonal</label>
+                    </div>
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" id="exotic">
+                        <label class="form-check-label" for="exotic">Exotic</label>
+                    </div>
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" id="sugarFree">
+                        <label class="form-check-label" for="sugarFree">Sugar Free</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="vegan">
-                        <label class="form-check-label" for="vegan">Vegan</label>
+                        <input class="form-check-input" type="checkbox" id="coldPressed">
+                        <label class="form-check-label" for="coldPressed">Cold Pressed</label>
+                    </div>
+                    <div class="reset-filters" onclick="resetFilters()">
+                        <i class="fas fa-redo"></i> Reset Filters
                     </div>
                 </div>
             </div>
@@ -130,18 +249,18 @@
             <!-- Products Section -->
             <div class="col-lg-9">
                 <div class="d-flex justify-content-between mb-4">
-                    <h4 class="mb-0">All Products</h4>
+                    <h4 class="mb-0">All Fresh Products</h4>
                     <div class="sort-dropdown">
                         <div class="dropdown">
                             <button class="btn dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown">
                                 Sort by: Featured
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item active" href="#">Featured</a></li>
-                                <li><a class="dropdown-item" href="#">Price: Low to High</a></li>
-                                <li><a class="dropdown-item" href="#">Price: High to Low</a></li>
-                                <li><a class="dropdown-item" href="#">Newest</a></li>
-                                <li><a class="dropdown-item" href="#">Best Rating</a></li>
+                                <li><a class="dropdown-item active" href="#" data-sort="featured">Featured</a></li>
+                                <li><a class="dropdown-item" href="#" data-sort="price-low">Price: Low to High</a></li>
+                                <li><a class="dropdown-item" href="#" data-sort="price-high">Price: High to Low</a></li>
+                                <li><a class="dropdown-item" href="#" data-sort="newest">Newest</a></li>
+                                <li><a class="dropdown-item" href="#" data-sort="rating">Best Rating</a></li>
                             </ul>
                         </div>
                     </div>
@@ -150,25 +269,9 @@
                 <div class="row" id="productContainer">
                     <!-- Product cards will be dynamically inserted here -->
                 </div>
-
-                <!-- Pagination -->
-                <div aria-label="Page" class="mt-5">
-                    <ul class="pagination justify-content-end">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1">Previous</a>
-                        </li>
-                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">Next</a>
-                        </li>
-                    </ul>
-                </div>
             </div>
         </div>
     </div>
-
 
     <!-- Product Detail Modal -->
     <div class="modal fade" id="productDetailModal" tabindex="-1" aria-hidden="true">
@@ -185,8 +288,27 @@
         </div>
     </div>
 
+    <!-- Cart Confirmation Modal -->
+    <div class="modal fade" id="cartConfirmationModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Item Added to Cart</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="cartConfirmationContent">
+                    <!-- Content will be dynamically inserted here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continue Shopping</button>
+                    <button type="button" class="btn btn-primary" onclick="location.href='cart.html'">Go to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
-   <footer class="freshpicks-footer">
+    <footer class="freshpicks-footer">
         <div class="container">
             <div class="freshpicks-footer-grid">
                 <div>
@@ -231,123 +353,424 @@
             </div>
         </div>
     </footer>
+
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-     <!-- Bootstrap JS Bundle with Popper -->
+    <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    
-
-    
     <script>
-        // Sample product data
+        // Combined product data for vegetables, fruits, and juices
         const products = [
+            // Vegetables
             {
                 id: 1,
-                name: "Orange Juice",
-                category: "juice",
-                price: 2.99,
-                oldPrice: 3.49,
-                image: "assets/images/orangejuice.jpg",
-                rating: 4.5,
-                stock: 10,
-                organic: true,
-                description: "Crisp and juicy organic apples grown without synthetic pesticides or fertilizers. Perfect for snacking or baking.",
-                benefits: "High in fiber, vitamin C, and antioxidants. Supports heart health and digestion."
-            },
-            {
-                id: 2,
-                name: "Fresh Carrots",
+                name: "Carrots",
                 category: "vegetables",
-                price: 1.49,
-                oldPrice: 1.99,
-                image: "https://images.unsplash.com/photo-1447175008436-054170c2e979?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                price: 30,
+                oldPrice: 35,
+                image: "assets/images/vegitables/carrot.jpg",
                 rating: 4.2,
                 stock: 15,
                 organic: false,
-                description: "Sweet and crunchy carrots, perfect for salads, snacks, or cooking. Locally grown and freshly harvested.",
-                benefits: "Rich in beta-carotene, fiber, vitamin K1, and antioxidants. Good for eye health."
+                seasonal: false,
+                exotic: false,
+                sugarFree: true,
+                coldPressed: false,
+                description: "Crisp, sweet, and rich in vitamin A—ideal for salads and stews",
+                benefits: "Rich in beta-carotene for eye health, Supports immunity, Great for skin and digestion"
             },
             {
-                id: 3,
-                name: "Orange Juice",
-                category: "juices",
-                price: 4.99,
-                oldPrice: 5.49,
-                image: "assets/images/orangejuice.jpg",
-                rating: 4.7,
-                stock: 8,
-                organic: true,
-                description: "100% pure squeezed orange juice with no added sugars or preservatives. Packed with vitamin C.",
-                benefits: "Boosts immune system, improves skin health, and provides natural energy."
-            },
-            {
-                id: 4,
-                name: "Organic Spinach",
+                id: 2,
+                name: "Tomato",
                 category: "vegetables",
-                price: 3.29,
-                oldPrice: 3.99,
-                image: "https://images.unsplash.com/photo-1576045057995-568f588f82fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                price: 20,
+                oldPrice: 22,
+                image: "assets/images/vegitables/tomato.jpg",
                 rating: 4.3,
                 stock: 12,
                 organic: true,
-                description: "Tender organic spinach leaves, perfect for salads, smoothies, or cooking. Grown with sustainable methods.",
-                benefits: "High in iron, calcium, magnesium, and vitamins A, C, and K. Supports bone health."
+                seasonal: false,
+                exotic: false,
+                sugarFree: true,
+                coldPressed: false,
+                description: "Juicy and tangy—ideal for all types of cooking.",
+                benefits: "High in antioxidants like lycopene, Boosts heart health, Supports glowing skin"
             },
             {
-                id: 5,
-                name: "Strawberries",
-                category: "fruits",
-                price: 3.99,
-                oldPrice: 4.49,
-                image: "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                rating: 4.8,
-                stock: 0,
-                organic: false,
-                description: "Sweet and juicy strawberries, perfect for desserts, smoothies, or fresh eating. Picked at peak ripeness.",
-                benefits: "Rich in antioxidants, vitamin C, manganese, and folate. May help regulate blood sugar."
-            },
-            {
-                id: 6,
-                name: "Stawberry Juice",
-                category: "juices",
-                price: 5.49,
-                oldPrice: 5.99,
-                image: "assets/images/stawberry.jpg",
-                rating: 4.6,
-                stock: 7,
-                organic: true,
-                description: "Nutrient-packed green juice with kale, spinach, cucumber, apple, and lemon. Cold-pressed for maximum nutrition.",
-                benefits: "Detoxifying, alkalizing, and packed with vitamins, minerals, and chlorophyll."
-            },
-            {
-                id: 7,
-                name: "Organic Tomatoes",
+                id: 3,
+                name: "Beans",
                 category: "vegetables",
-                price: 2.79,
-                oldPrice: 3.29,
-                image: "assets/images/vegitables.jpg",
+                price: 35,
+                oldPrice: 40,
+                image: "assets/images/vegitables/beans.jpg",
                 rating: 4.4,
                 stock: 14,
                 organic: true,
-                description: "Vine-ripened organic tomatoes with rich flavor and perfect texture. Great for salads, sauces, or sandwiches.",
-                benefits: "Excellent source of lycopene, vitamin C, potassium, and folate. Supports heart health."
+                seasonal: true,
+                exotic: false,
+                sugarFree: true,
+                coldPressed: false,
+                description: "Fresh and crunchy—perfect for stir-fries.",
+                benefits: "High in fiber and protein, Aids digestion, Helps regulate blood sugar"
+            },
+            {
+                id: 4,
+                name: "Onion",
+                category: "vegetables",
+                price: 20,
+                oldPrice: 22,
+                image: "assets/images/vegitables/onion.jpg",
+                rating: 4.4,
+                stock: 14,
+                organic: true,
+                seasonal: false,
+                exotic: false,
+                sugarFree: true,
+                coldPressed: false,
+                description: "Adds flavor and aroma to any dish.",
+                benefits: "Rich in antioxidants, Supports heart health, Contains anti-inflammatory properties"
+            },
+            {
+                id: 5,
+                name: "Potato",
+                category: "vegetables",
+                price: 25,
+                oldPrice: 28,
+                image: "assets/images/vegitables/potato.jpg",
+                rating: 4.4,
+                stock: 14,
+                organic: true,
+                seasonal: false,
+                exotic: false,
+                sugarFree: true,
+                coldPressed: false,
+                description: "Versatile and filling—a staple in many recipes.",
+                benefits: "High in potassium and vitamin C, Provides lasting energy, Supports brain function"
+            },
+            {
+                id: 6,
+                name: "Cauliflower",
+                category: "vegetables",
+                price: 40,
+                oldPrice: 45,
+                image: "assets/images/vegitables/Cauliflower.jpg",
+                rating: 4.4,
+                stock: 0, // Out of stock
+                organic: true,
+                seasonal: true,
+                exotic: false,
+                sugarFree: true,
+                coldPressed: false,
+                description: "Light and crisp—great for healthy meals.",
+                benefits: "Low in carbs, high in fiber, Supports detoxification, Boosts brain health"
+            },
+            {
+                id: 7,
+                name: "Brinjal (Eggplant)",
+                category: "vegetables",
+                price: 15,
+                oldPrice: 20,
+                image: "assets/images/vegitables/Brinjal.jpg",
+                rating: 4.4,
+                stock: 14,
+                organic: false,
+                seasonal: true,
+                exotic: false,
+                sugarFree: true,
+                coldPressed: false,
+                description: "Soft and flavorful—great for curries and grills.",
+                benefits: "Contains antioxidants like nasunin, Supports weight loss, Helps lower cholesterol"
             },
             {
                 id: 8,
-                name: "Bananas",
+                name: "Cabbage",
+                category: "vegetables",
+                price: 15,
+                oldPrice: 20,
+                image: "assets/images/vegitables/Cabbage.jpg",
+                rating: 4.4,
+                stock: 14,
+                organic: false,
+                seasonal: false,
+                exotic: false,
+                sugarFree: true,
+                coldPressed: false,
+                description: "Leafy and crunchy—great for salads and stir-fries.",
+                benefits: "Rich in vitamin K and C, Promotes gut health, Has anti-inflammatory properties"
+            },
+            
+            // Fruits
+            {
+                id: 9,
+                name: "Mango",
                 category: "fruits",
-                price: 0.99,
-                oldPrice: 1.29,
-                image: "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
-                rating: 4.1,
+                price: 80,
+                oldPrice: 90,
+                image: "assets/images/fruits/mango.jpg",
+                rating: 4.8,
+                stock: 25,
+                organic: true,
+                seasonal: true,
+                exotic: false,
+                sugarFree: false,
+                coldPressed: false,
+                description: "Sweet, juicy and aromatic - the king of fruits perfect for summer",
+                benefits: "Rich in vitamins A and C, Boosts immunity, Supports eye health, Aids digestion"
+            },
+            {
+                id: 10,
+                name: "Apple",
+                category: "fruits",
+                price: 120,
+                oldPrice: 130,
+                image: "assets/images/fruits/apple.jpg",
+                rating: 4.5,
+                stock: 30,
+                organic: true,
+                seasonal: false,
+                exotic: false,
+                sugarFree: false,
+                coldPressed: false,
+                description: "Crisp and sweet with a refreshing taste - available year-round",
+                benefits: "High in fiber and antioxidants, Supports heart health, May help with weight loss"
+            },
+            {
+                id: 11,
+                name: "Banana",
+                category: "fruits",
+                price: 40,
+                oldPrice: 45,
+                image: "assets/images/fruits/banana.jpg",
+                rating: 4.3,
+                stock: 50,
+                organic: false,
+                seasonal: false,
+                exotic: false,
+                sugarFree: false,
+                coldPressed: false,
+                description: "Energy-packed and naturally sweet - perfect quick snack",
+                benefits: "Rich in potassium, Supports heart health, Boosts energy, Helps digestion"
+            },
+            {
+                id: 12,
+                name: "Pomegranate",
+                category: "fruits",
+                price: 90,
+                oldPrice: 100,
+                image: "assets/images/fruits/pomegranate.jpg",
+                rating: 4.6,
+                stock: 15,
+                organic: true,
+                seasonal: true,
+                exotic: false,
+                sugarFree: false,
+                coldPressed: false,
+                description: "Juicy arils with a perfect balance of sweet and tart flavors",
+                benefits: "Packed with antioxidants, Supports heart health, May help lower blood pressure"
+            },
+            {
+                id: 13,
+                name: "Dragon Fruit",
+                category: "fruits",
+                price: 150,
+                oldPrice: 170,
+                image: "assets/images/fruits/dragonfruit.jpg",
+                rating: 4.7,
+                stock: 8,
+                organic: false,
+                seasonal: false,
+                exotic: true,
+                sugarFree: false,
+                coldPressed: false,
+                description: "Exotic tropical fruit with mild sweetness and striking appearance",
+                benefits: "Rich in antioxidants, High in fiber, Supports gut health, Boosts immunity"
+            },
+            {
+                id: 14,
+                name: "Kiwi",
+                category: "fruits",
+                price: 60,
+                oldPrice: 70,
+                image: "assets/images/fruits/kiwi.jpg",
+                rating: 4.4,
+                stock: 0, // Out of stock
+                organic: true,
+                seasonal: false,
+                exotic: true,
+                sugarFree: false,
+                coldPressed: false,
+                description: "Tangy and sweet with vibrant green flesh and tiny black seeds",
+                benefits: "High in vitamin C, Supports immune system, Aids digestion, Good for skin"
+            },
+            {
+                id: 15,
+                name: "Guava",
+                category: "fruits",
+                price: 50,
+                oldPrice: 55,
+                image: "assets/images/fruits/guava.jpg",
+                rating: 4.2,
                 stock: 20,
                 organic: false,
-                description: "Naturally sweet bananas, a perfect energy-boosting snack. Rich in potassium and easy to digest.",
-                benefits: "High in potassium, vitamin B6, and fiber. Supports heart health and digestion."
+                seasonal: true,
+                exotic: false,
+                sugarFree: false,
+                coldPressed: false,
+                description: "Tropical fruit with sweet aroma and crunchy seeds",
+                benefits: "Extremely high in vitamin C, Supports digestion, May help lower blood sugar"
+            },
+            {
+                id: 16,
+                name: "Strawberries",
+                category: "fruits",
+                price: 110,
+                oldPrice: 120,
+                image: "assets/images/fruits/strawberry.jpg",
+                rating: 4.9,
+                stock: 12,
+                organic: true,
+                seasonal: true,
+                exotic: false,
+                sugarFree: false,
+                coldPressed: false,
+                description: "Sweet, juicy and fragrant - perfect for desserts or fresh eating",
+                benefits: "Rich in antioxidants, Supports heart health, May help regulate blood sugar"
+            },
+        
+            {
+                id: 17,
+                name: "Orange Juice",
+                category: "juices",
+                price: 80,
+                oldPrice: 90,
+                image: "assets/images/juices/orange.jpg",
+                rating: 4.7,
+                stock: 15,
+                organic: true,
+                seasonal: false,
+                exotic: false,
+                sugarFree: false,
+                coldPressed: true,
+                size: "500ml",
+                description: "Freshly squeezed organic oranges packed with vitamin C and natural sweetness",
+                benefits: "Boosts immunity, Rich in antioxidants, Supports skin health, Natural energy booster"
+            },
+            {
+                id: 18,
+                name: "Watermelon Mint",
+                category: "juices",
+                price: 75,
+                oldPrice: 85,
+                image: "assets/images/juices/watermelon.jpg",
+                rating: 4.6,
+                stock: 20,
+                organic: false,
+                seasonal: true,
+                exotic: false,
+                sugarFree: false,
+                coldPressed: false,
+                size: "500ml",
+                description: "Refreshing watermelon juice with a hint of fresh mint - perfect summer cooler",
+                benefits: "Hydrating, Rich in lycopene, Supports heart health, Natural electrolyte"
+            },
+            {
+                id: 19,
+                name: "Berry Blast Smoothie",
+                category: "smoothies",
+                price: 110,
+                oldPrice: 120,
+                image: "assets/images/juices/berry.jpg",
+                rating: 4.9,
+                stock: 12,
+                organic: true,
+                seasonal: false,
+                exotic: false,
+                sugarFree: false,
+                coldPressed: false,
+                size: "400ml",
+                description: "Creamy blend of mixed berries, banana and almond milk - packed with antioxidants",
+                benefits: "High in fiber, Supports brain health, Boosts immunity, Great post-workout drink"
+            },
+            {
+                id: 20,
+                name: "Carrot Ginger Turmeric",
+                category: "juices",
+                price: 95,
+                oldPrice: 105,
+                image: "assets/images/juices/carrot.jpg",
+                rating: 4.5,
+                stock: 8,
+                organic: true,
+                seasonal: false,
+                exotic: false,
+                sugarFree: true,
+                coldPressed: true,
+                size: "500ml",
+                description: "Anti-inflammatory juice with carrots, ginger, turmeric and a dash of black pepper",
+                benefits: "Reduces inflammation, Supports joint health, Boosts immunity, Good for eyesight"
+            },
+            {
+                id: 21,
+                name: "Pineapple Coconut",
+                category: "juices",
+                price: 90,
+                oldPrice: 100,
+                image: "assets/images/juices/pineapple.jpg",
+                rating: 4.7,
+                stock: 0, // Out of stock
+                organic: false,
+                seasonal: false,
+                exotic: true,
+                sugarFree: false,
+                coldPressed: false,
+                size: "500ml",
+                description: "Tropical blend of sweet pineapple and creamy coconut water",
+                benefits: "Digestive enzymes, Hydrating electrolytes, Rich in manganese, Supports immune system"
+            },
+            {
+                id: 22,
+                name: "Beetroot Apple Lemon",
+                category: "juices",
+                price: 85,
+                oldPrice: 95,
+                image: "assets/images/juices/beetroot.jpg",
+                rating: 4.4,
+                stock: 5,
+                organic: true,
+                seasonal: false,
+                exotic: false,
+                sugarFree: false,
+                coldPressed: true,
+                size: "500ml",
+                description: "Earthiness of beetroot balanced with sweet apple and tangy lemon",
+                benefits: "Boosts stamina, Supports liver function, Rich in nitrates, Helps lower blood pressure"
+            },
+            {
+                id: 23,
+                name: "Avocado Spinach Smoothie",
+                category: "smoothies",
+                price: 130,
+                oldPrice: 150,
+                image: "assets/images/juices/Avocadosmoothie.jpg",
+                rating: 4.8,
+                stock: 7,
+                organic: true,
+                seasonal: false,
+                exotic: false,
+                sugarFree: true,
+                coldPressed: false,
+                size: "400ml",
+                description: "Creamy green smoothie with avocado, spinach, banana and almond milk",
+                benefits: "High in healthy fats, Packed with iron, Supports muscle recovery, Keeps you full longer"
             }
         ];
+
+        // Current filtered and sorted products
+        let currentProducts = [...products];
+        let currentSort = 'featured';
+        let currentCategory = 'all';
 
         // Function to render products
         function renderProducts(productsToRender) {
@@ -366,6 +789,9 @@
                     <div class="card product-card h-100">
                         ${product.stock === 0 ? '<span class="product-badge">Out of Stock</span>' : ''}
                         ${product.organic ? '<span class="product-badge organic-badge">Organic</span>' : ''}
+                        ${product.exotic ? '<span class="product-badge exotic-badge">Exotic</span>' : ''}
+                        ${product.coldPressed ? '<span class="product-badge coldpressed-badge">Cold Pressed</span>' : ''}
+                        ${product.size ? `<span class="product-size-badge">${product.size}</span>` : ''}
                         <div class="overflow-hidden">
                             <img src="${product.image}" class="card-img-top product-img" alt="${product.name}">
                         </div>
@@ -389,7 +815,7 @@
                                 <button class="btn view-detail-btn" onclick="showProductDetail(${product.id})">
                                     <i class="fas fa-eye me-1"></i> View
                                 </button>
-                                <button class="btn add-to-cart-btn" ${product.stock === 0 ? 'disabled' : ''} onclick="addToCart(${product.id})">
+                                <button class="btn add-to-cart-btn" ${product.stock === 0 ? 'disabled' : ''} onclick="addToCart(${product.id}, 1)">
                                     <i class="fas fa-shopping-cart me-1"></i> Add to Cart
                                 </button>
                             </div>
@@ -442,74 +868,101 @@
                         <div class="d-flex align-items-center mb-3">
                             <h4 class="mb-0 text-primary">₹${product.price.toFixed(2)}</h4>
                             ${product.oldPrice ? `<del class="text-muted ms-2">₹${product.oldPrice.toFixed(2)}</del>` : ''}
-                            ${product.organic ? '<span class="badge bg-success ms-2">Organic</span>' : ''}
                         </div>
-                        <p class="mb-4">${product.description}</p>
-                        <h5>Health Benefits:</h5>
+                        <p class="text-capitalize"><strong>Category:</strong> ${product.category}</p>
+                        ${product.size ? `<p><strong>Size:</strong> ${product.size}</p>` : ''}
+                        <p><strong>Availability:</strong> ${product.stock > 0 ? `<span class="text-success">In Stock (${product.stock} available)</span>` : '<span class="text-danger">Out of Stock</span>'}</p>
+                        
+                        <div class="product-features mb-3">
+                            ${product.organic ? '<span class="badge bg-success me-1 mb-1">Organic</span>' : ''}
+                            ${product.seasonal ? '<span class="badge bg-info me-1 mb-1">Seasonal</span>' : ''}
+                            ${product.exotic ? '<span class="badge bg-primary me-1 mb-1">Exotic</span>' : ''}
+                            ${product.sugarFree ? '<span class="badge bg-secondary me-1 mb-1">Sugar Free</span>' : ''}
+                            ${product.coldPressed ? '<span class="badge bg-warning text-dark me-1 mb-1">Cold Pressed</span>' : ''}
+                        </div>
+                        
+                        <h5 class="mt-4">Description</h5>
+                        <p>${product.description}</p>
+                        
+                        <h5 class="mt-4">Health Benefits</h5>
                         <p>${product.benefits}</p>
-                        <div class="d-flex align-items-center mt-4">
-                            <div class="quantity-control me-4">
-                                <button class="quantity-btn" onclick="adjustQuantity(${product.id}, -1)">-</button>
-                                <input type="text" class="quantity-input" id="quantity-${product.id}" value="1" readonly>
-                                <button class="quantity-btn" onclick="adjustQuantity(${product.id}, 1)">+</button>
+                        
+                        <div class="d-flex mt-4">
+                            <div class="input-group me-3" style="width: 120px;">
+                                <button class="btn btn-outline-secondary" type="button" onclick="updateQuantity(${product.id}, -1)">-</button>
+                                <input type="text" class="form-control text-center" id="quantity-${product.id}" value="1">
+                                <button class="btn btn-outline-secondary" type="button" onclick="updateQuantity(${product.id}, 1)">+</button>
                             </div>
-                            <button class="btn btn-primary btn-lg" ${product.stock === 0 ? 'disabled' : ''} onclick="addToCart(${product.id}, document.getElementById('quantity-${product.id}').value)">
-                                <i class="fas fa-shopping-cart me-2"></i> Add to Cart
+                            <button class="btn btn-primary flex-grow-1 ${product.stock === 0 ? 'disabled' : ''}" onclick="addToCart(${product.id}, parseInt(document.getElementById('quantity-${product.id}').value))">
+                                <i class="fas fa-shopping-cart me-2"></i>Add to Cart
                             </button>
-                        </div>
-                        <div class="mt-3">
-                            ${product.stock > 0 ? 
-                                `<span class="text-success"><i class="fas fa-check-circle me-1"></i> In Stock (${product.stock} available)</span>` : 
-                                '<span class="text-danger"><i class="fas fa-times-circle me-1"></i> Out of Stock</span>'}
                         </div>
                     </div>
                 </div>
             `;
-
+            
             const modal = new bootstrap.Modal(document.getElementById('productDetailModal'));
             modal.show();
         }
 
-        // Function to adjust quantity
-        function adjustQuantity(productId, change) {
-            const quantityInput = document.getElementById(`quantity-${productId}`);
-            let quantity = parseInt(quantityInput.value) + change;
-            if (quantity < 1) quantity = 1;
+        // Function to update quantity in product detail modal
+        function updateQuantity(productId, change) {
+            const input = document.getElementById(`quantity-${productId}`);
+            let quantity = parseInt(input.value) || 1;
+            quantity += change;
             
+            // Ensure quantity is at least 1 and doesn't exceed available stock
             const product = products.find(p => p.id === productId);
-            if (product && quantity > product.stock) {
-                quantity = product.stock;
+            if (product) {
+                quantity = Math.max(1, Math.min(quantity, product.stock));
+                input.value = quantity;
             }
-            
-            quantityInput.value = quantity;
         }
 
-        // Function to add to cart
+        // Function to add product to cart
         function addToCart(productId, quantity = 1) {
             const product = products.find(p => p.id === productId);
             if (!product) return;
-
-            if (product.stock === 0) {
-                alert('This product is out of stock');
-                return;
+            
+            // In a real app, you would add to cart via API or localStorage
+            // Here we'll just show a confirmation modal
+            const confirmationContent = document.getElementById('cartConfirmationContent');
+            confirmationContent.innerHTML = `
+                <div class="d-flex align-items-center">
+                    <img src="${product.image}" alt="${product.name}" style="width: 80px; height: 80px; object-fit: cover; border-radius: 5px;">
+                    <div class="ms-3">
+                        <h5>${product.name}</h5>
+                        <p class="mb-1">${quantity} x ₹${product.price.toFixed(2)} = ₹${(quantity * product.price).toFixed(2)}</p>
+                        <p class="text-success mb-0">Successfully added to your cart!</p>
+                    </div>
+                </div>
+            `;
+            
+            // Update cart count in header
+            const cartCount = document.querySelector('.cart-count');
+            if (cartCount) {
+                const currentCount = parseInt(cartCount.textContent) || 0;
+                cartCount.textContent = currentCount + quantity;
             }
-
-            // In a real app, you would add to cart logic here
-            alert(`Added ${quantity} ${product.name}(s) to cart`);
-            console.log(`Added to cart: ${product.name} x${quantity}`);
+            
+            const modal = new bootstrap.Modal(document.getElementById('cartConfirmationModal'));
+            modal.show();
         }
 
         // Function to filter products
         function filterProducts() {
-            const selectedCategory = document.querySelector('.category-tag.active')?.dataset.category;
             const priceRange = parseInt(document.getElementById('priceRange').value);
             const inStock = document.getElementById('inStock').checked;
             const outOfStock = document.getElementById('outOfStock').checked;
             const organic = document.getElementById('organic').checked;
+            const seasonal = document.getElementById('seasonal').checked;
+            const exotic = document.getElementById('exotic').checked;
+            const sugarFree = document.getElementById('sugarFree').checked;
+            const coldPressed = document.getElementById('coldPressed').checked;
             
-            let filteredProducts = products.filter(product => {
+            currentProducts = products.filter(product => {
                 // Category filter
-                if (selectedCategory !== 'all' && product.category !== selectedCategory) {
+                if (currentCategory !== 'all' && product.category !== currentCategory) {
                     return false;
                 }
                 
@@ -519,85 +972,117 @@
                 }
                 
                 // Stock filter
-                if ((inStock && !outOfStock && product.stock === 0) || 
-                    (!inStock && outOfStock && product.stock > 0)) {
+                if ((product.stock === 0 && !outOfStock) || (product.stock > 0 && !inStock)) {
                     return false;
                 }
                 
-                // Organic filter
+                // Feature filters
                 if (organic && !product.organic) {
+                    return false;
+                }
+                if (seasonal && !product.seasonal) {
+                    return false;
+                }
+                if (exotic && !product.exotic) {
+                    return false;
+                }
+                if (sugarFree && !product.sugarFree) {
+                    return false;
+                }
+                if (coldPressed && !product.coldPressed) {
                     return false;
                 }
                 
                 return true;
             });
             
-            renderProducts(filteredProducts);
+            sortProducts();
+            renderProducts(currentProducts);
+        }
+
+        // Function to sort products
+        function sortProducts() {
+            switch(currentSort) {
+                case 'price-low':
+                    currentProducts.sort((a, b) => a.price - b.price);
+                    break;
+                case 'price-high':
+                    currentProducts.sort((a, b) => b.price - a.price);
+                    break;
+                case 'newest':
+                    // Assuming higher IDs are newer products
+                    currentProducts.sort((a, b) => b.id - a.id);
+                    break;
+                case 'rating':
+                    currentProducts.sort((a, b) => b.rating - a.rating);
+                    break;
+                case 'featured':
+                default:
+                    // Original order (as in products array)
+                    currentProducts.sort((a, b) => a.id - b.id);
+                    break;
+            }
+        }
+
+        // Function to reset all filters
+        function resetFilters() {
+            document.getElementById('priceRange').value = 150;
+            document.getElementById('inStock').checked = true;
+            document.getElementById('outOfStock').checked = false;
+            document.getElementById('organic').checked = false;
+            document.getElementById('seasonal').checked = false;
+            document.getElementById('exotic').checked = false;
+            document.getElementById('sugarFree').checked = false;
+            document.getElementById('coldPressed').checked = false;
+            
+            document.querySelectorAll('.category-tag').forEach(tag => {
+                tag.classList.remove('active');
+            });
+            document.querySelector('.category-tag[data-category="all"]').classList.add('active');
+            
+            currentCategory = 'all';
+            document.getElementById('selectedPrice').textContent = '0';
+            document.getElementById('maxPrice').textContent = '150';
+            
+            filterProducts();
         }
 
         // Initialize the page
         document.addEventListener('DOMContentLoaded', function() {
-            // Render all products initially
-            renderProducts(products);
+            // Set up event listeners
+            document.getElementById('priceRange').addEventListener('input', function() {
+                document.getElementById('selectedPrice').textContent = '0';
+                document.getElementById('maxPrice').textContent = this.value;
+                filterProducts();
+            });
             
-            // Set up event listeners for filters
             document.querySelectorAll('.category-tag').forEach(tag => {
                 tag.addEventListener('click', function() {
                     document.querySelectorAll('.category-tag').forEach(t => t.classList.remove('active'));
                     this.classList.add('active');
+                    currentCategory = this.dataset.category;
                     filterProducts();
                 });
             });
             
-            document.getElementById('priceRange').addEventListener('input', filterProducts);
-            document.getElementById('inStock').addEventListener('change', filterProducts);
-            document.getElementById('outOfStock').addEventListener('change', filterProducts);
-            document.getElementById('organic').addEventListener('change', filterProducts);
-            
-            // Search functionality
-            document.querySelector('.search-box input').addEventListener('input', function(e) {
-                const searchTerm = e.target.value.toLowerCase();
-                const filtered = products.filter(product => 
-                    product.name.toLowerCase().includes(searchTerm) || 
-                    product.category.toLowerCase().includes(searchTerm)
-                );
-                renderProducts(filtered);
-            });
-            
-            // Sort dropdown functionality
-            document.querySelectorAll('.sort-dropdown .dropdown-item').forEach(item => {
+            document.querySelectorAll('.dropdown-item[data-sort]').forEach(item => {
                 item.addEventListener('click', function(e) {
                     e.preventDefault();
-                    document.querySelectorAll('.sort-dropdown .dropdown-item').forEach(i => i.classList.remove('active'));
+                    document.querySelector('#sortDropdown').textContent = `Sort by: ${this.textContent}`;
+                    document.querySelectorAll('.dropdown-item').forEach(i => i.classList.remove('active'));
                     this.classList.add('active');
-                    document.getElementById('sortDropdown').textContent = `Sort by: ${this.textContent}`;
-                    
-                    let sortedProducts = [...products];
-                    switch(this.textContent) {
-                        case 'Price: Low to High':
-                            sortedProducts.sort((a, b) => a.price - b.price);
-                            break;
-                        case 'Price: High to Low':
-                            sortedProducts.sort((a, b) => b.price - a.price);
-                            break;
-                        case 'Newest':
-                            // Assuming newer products have higher IDs
-                            sortedProducts.sort((a, b) => b.id - a.id);
-                            break;
-                        case 'Best Rating':
-                            sortedProducts.sort((a, b) => b.rating - a.rating);
-                            break;
-                        default: // Featured
-                            // No sorting needed
-                            break;
-                    }
-                    
-                    renderProducts(sortedProducts);
+                    currentSort = this.dataset.sort;
+                    filterProducts();
                 });
             });
+            
+            document.querySelectorAll('#inStock, #outOfStock, #organic, #seasonal, #exotic, #sugarFree, #coldPressed').forEach(checkbox => {
+                checkbox.addEventListener('change', filterProducts);
+            });
+            
+            // Initial render
+            filterProducts();
         });
     </script>
-
 </body>
 </html>
-

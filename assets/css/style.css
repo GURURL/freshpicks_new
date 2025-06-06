@@ -2807,8 +2807,6 @@
         .form-control {
             border-radius: 10px;
             border: 1px solid #e0e0e0;
-            padding: 15px 20px;
-            margin-bottom: 20px;
             transition: var(--transition);
             font-size: 16px;
         }
@@ -3061,7 +3059,7 @@
         
         .floating-label label {
             position: absolute;
-            top: 15px;
+            top: 4px;
             left: 20px;
             color: var(--gray);
             transition: var(--transition);
@@ -3274,4 +3272,36 @@
         
         .rating-stars {
             color: var(--secondary);
+        }
+
+
+
+
+        #vegetables-tab{
+                 color: #212121;
+                 
+        }
+
+
+
+         #vegetables-tab:hover{
+                background: #4caf50;
+                color: white;
+                
+         }
+
+        #fruits-tab{
+            color: #212121;
+        }
+        #fruits-tab:hover{
+             background: #4caf50;
+                color: white;
+        }
+
+        #juices-tab{
+            color: #212121;
+        }
+        #juices-tab:hover{
+            background: #4caf50;
+                color: white;
         }

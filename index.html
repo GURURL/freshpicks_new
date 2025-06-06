@@ -151,142 +151,398 @@
 
 
 
-    <!-- Products Section -->
-    <section class="products">
-        <div class="container">
-            <div class="section-title">
-                <h2>Featured Products</h2>
-                <p>Our best selling fresh and organic products</p>
+<!-- Featured Products Section with Tabs -->
+<section class="featured-products py-5">
+    <div class="container">
+        <h2 class="section-title text-center mb-5">Fresh Picks of the Season</h2>
+        
+        <!-- Category Tabs -->
+        <ul class="nav nav-tabs justify-content-center mb-4" id="productTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="vegetables-tab" data-bs-toggle="tab" data-bs-target="#vegetables" type="button" role="tab">Vegetables</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="fruits-tab" data-bs-toggle="tab" data-bs-target="#fruits" type="button" role="tab">Fruits</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="juices-tab" data-bs-toggle="tab" data-bs-target="#juices" type="button" role="tab">Fresh Juices</button>
+            </li>
+        </ul>
+        
+        <!-- Tab Content -->
+        <div class="tab-content" id="productTabsContent">
+            <!-- Vegetables Tab -->
+            <div class="tab-pane fade show active" id="vegetables" role="tabpanel">
+                <div class="row">
+                    <!-- Vegetable Product Cards -->
+                    <div class="col-md-6 col-lg-3 mb-4">
+                        <div class="card product-card h-100">
+                            <span class="product-badge organic-badge">Organic</span>
+                            <div class="overflow-hidden">
+                                <img src="assets/images/vegitables/tomato.jpg" class="card-img-top product-img" alt="Tomato">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="product-title">Tomato</h5>
+                                <p class="product-category text-capitalize">Vegetables</p>
+                                <div class="product-rating mb-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <small class="text-muted ms-1">(4.3)</small>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <div class="d-f">
+                                        <span class="product-price">₹20.00</span>
+                                        <span class="product-old-price">₹22.00</span>
+                                    </div>
+                                    <span class="text-success"><small>In Stock (12)</small></span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3 mb-4">
+                        <div class="card product-card h-100">
+                            <span class="product-badge organic-badge">Organic</span>
+                            <div class="overflow-hidden">
+                                <img src="assets/images/vegitables/carrot.jpg" class="card-img-top product-img" alt="Carrot">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="product-title">Carrot</h5>
+                                <p class="product-category text-capitalize">Vegetables</p>
+                                <div class="product-rating mb-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <small class="text-muted ms-1">(4.2)</small>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <div class="d-f">
+                                        <span class="product-price">₹30.00</span>
+                                        <span class="product-old-price">₹35.00</span>
+                                    </div>
+                                    <span class="text-success"><small>In Stock (15)</small></span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3 mb-4">
+                        <div class="card product-card h-100">
+                            <span class="product-badge organic-badge">Organic</span>
+                            <div class="overflow-hidden">
+                                <img src="assets/images/vegitables/beans.jpg" class="card-img-top product-img" alt="Beans">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="product-title">Beans</h5>
+                                <p class="product-category text-capitalize">Vegetables</p>
+                                <div class="product-rating mb-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <small class="text-muted ms-1">(4.4)</small>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <div class="d-f">
+                                        <span class="product-price">₹35.00</span>
+                                        <span class="product-old-price">₹40.00</span>
+                                    </div>
+                                    <span class="text-success"><small>In Stock (14)</small></span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3 mb-4">
+                        <div class="card product-card h-100">
+                            <div class="overflow-hidden">
+                                <img src="assets/images/vegitables/potato.jpg" class="card-img-top product-img" alt="Potato">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="product-title">Potato</h5>
+                                <p class="product-category text-capitalize">Vegetables</p>
+                                <div class="product-rating mb-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <small class="text-muted ms-1">(4.4)</small>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <div class="d-f">
+                                        <span class="product-price">₹25.00</span>
+                                        <span class="product-old-price">₹28.00</span>
+                                    </div>
+                                    <span class="text-success"><small>In Stock (14)</small></span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="vegitables.html" class="btn btn-outline-primary">View All Vegetables</a>
+                </div>
             </div>
             
-            <div class="products-filter">
-                <button class="filter-btn active">All</button>
-                <button class="filter-btn">Fruits</button>
-                <button class="filter-btn">Vegetables</button>
-                <button class="filter-btn">Juices</button>
-                <button class="filter-btn">Dairy</button>
+            <!-- Fruits Tab -->
+            <div class="tab-pane fade" id="fruits" role="tabpanel">
+                <div class="row">
+                    <!-- Fruit Product Cards -->
+                    <div class="col-md-6 col-lg-3 mb-4">
+                        <div class="card product-card h-100">
+                            <span class="product-badge organic-badge">Organic</span>
+                            <div class="overflow-hidden">
+                                <img src="assets/images/fruits/apple.jpg" class="card-img-top product-img" alt="Apple">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="product-title">Apple</h5>
+                                <p class="product-category text-capitalize">Fruits</p>
+                                <div class="product-rating mb-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <small class="text-muted ms-1">(4.7)</small>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <div class="d-f">
+                                        <span class="product-price">₹80.00</span>
+                                        <span class="product-old-price">₹90.00</span>
+                                    </div>
+                                    <span class="text-success"><small>In Stock (20)</small></span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3 mb-4">
+                        <div class="card product-card h-100">
+                            <div class="overflow-hidden">
+                                <img src="assets/images/fruits/banana.jpg" class="card-img-top product-img" alt="Banana">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="product-title">Banana</h5>
+                                <p class="product-category text-capitalize">Fruits</p>
+                                <div class="product-rating mb-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <small class="text-muted ms-1">(4.5)</small>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <div class="d-f">
+                                        <span class="product-price">₹30.00</span>
+                                        <span class="product-old-price">₹35.00</span>
+                                    </div>
+                                    <span class="text-success"><small>In Stock (25)</small></span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3 mb-4">
+                        <div class="card product-card h-100">
+                            <span class="product-badge organic-badge">Organic</span>
+                            <div class="overflow-hidden">
+                                <img src="assets/images/fruits/orange.jpeg" class="card-img-top product-img" alt="Orange">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="product-title">Orange</h5>
+                                <p class="product-category text-capitalize">Fruits</p>
+                                <div class="product-rating mb-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <small class="text-muted ms-1">(4.6)</small>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <div class="d-f">
+                                        <span class="product-price">₹60.00</span>
+                                        <span class="product-old-price">₹65.00</span>
+                                    </div>
+                                    <span class="text-success"><small>In Stock (18)</small></span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3 mb-4">
+                        <div class="card product-card h-100">
+                            <div class="overflow-hidden">
+                                <img src="assets/images/fruits/mango.jpg" class="card-img-top product-img" alt="Mango">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="product-title">Mango</h5>
+                                <p class="product-category text-capitalize">Fruits</p>
+                                <div class="product-rating mb-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <small class="text-muted ms-1">(4.8)</small>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <div class="d-f">
+                                        <span class="product-price">₹120.00</span>
+                                        <span class="product-old-price">₹140.00</span>
+                                    </div>
+                                    <span class="text-success"><small>In Stock (10)</small></span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="fruits.html" class="btn btn-outline-primary">View All Fruits</a>
+                </div>
             </div>
             
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Organic Apples">
-                        <div class="product-badge">Organic</div>
-                        <div class="product-actions">
-                            <button class="product-action-btn"><i class="fas fa-heart"></i></button>
-                            <button class="product-action-btn"><i class="fas fa-eye"></i></button>
-                            <button class="product-action-btn"><i class="fas fa-exchange-alt"></i></button>
+            <!-- Juices Tab -->
+            <div class="tab-pane fade" id="juices" role="tabpanel">
+                <div class="row">
+                    <!-- Juice Product Cards -->
+                    <div class="col-md-6 col-lg-3 mb-4">
+                        <div class="card product-card h-100">
+                            <span class="product-badge organic-badge">Organic</span>
+                            <div class="overflow-hidden">
+                                <img src="assets/images/juices/orange.jpg" class="card-img-top product-img" alt="Orange Juice">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="product-title">Orange Juice</h5>
+                                <p class="product-category text-capitalize">Juices</p>
+                                <div class="product-rating mb-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <small class="text-muted ms-1">(4.5)</small>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <div class="d-f">
+                                        <span class="product-price">₹60.00</span>
+                                        <span class="product-old-price">₹70.00</span>
+                                    </div>
+                                    <span class="text-success"><small>In Stock (10)</small></span>
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
-                    <div class="product-info">
-                        <span class="product-category">Fruits</span>
-                        <h3 class="product-title">Organic Apples</h3>
-                        <div class="product-price">
-                            <span class="current-price">₹2.99</span>
-                            <span class="old-price">₹3.49</span>
+                    
+                    <div class="col-md-6 col-lg-3 mb-4">
+                        <div class="card product-card h-100">
+                            <div class="overflow-hidden">
+                                <img src="assets/images/juices/watermelon.jpg" class="card-img-top product-img" alt="watermelon Juice">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="product-title">Watermelon Juice</h5>
+                                <p class="product-category text-capitalize">Juices</p>
+                                <div class="product-rating mb-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <small class="text-muted ms-1">(4.3)</small>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <div class="d-f">
+                                        <span class="product-price">₹65.00</span>
+                                        <span class="product-old-price">₹75.00</span>
+                                    </div>
+                                    <span class="text-success"><small>In Stock (8)</small></span>
+                                </div>
+                            </div>
+                            
                         </div>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3 mb-4">
+                        <div class="card product-card h-100">
+                            <span class="product-badge organic-badge">Organic</span>
+                            <div class="overflow-hidden">
+                                <img src="assets/images/juices/pinapple.jpg" class="card-img-top product-img" alt="Pomegranate Juice">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="product-title">Pineapple Juice</h5>
+                                <p class="product-category text-capitalize">Juices</p>
+                                <div class="product-rating mb-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <small class="text-muted ms-1">(4.7)</small>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <div class="d-f">
+                                        <span class="product-price">₹90.00</span>
+                                        <span class="product-old-price">₹100.00</span>
+                                    </div>
+                                    <span class="text-success"><small>In Stock (6)</small></span>
+                                </div>
+                            </div>
+                            
                         </div>
-                        <button class="add-to-cart" onclick="location.href='cart.html'">
-                            <i class="fas fa-shopping-cart"></i> Add to Cart
-                        </button>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3 mb-4">
+                        <div class="card product-card h-100">
+                            <div class="overflow-hidden">
+                                <img src="assets/images/juices/carrot.jpg" class="card-img-top product-img" alt="Mixed Fruit Juice">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="product-title">carrot Juice</h5>
+                                <p class="product-category text-capitalize">Juices</p>
+                                <div class="product-rating mb-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <small class="text-muted ms-1">(4.6)</small>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <div class="d-f">
+                                        <span class="product-price">₹70.00</span>
+                                        <span class="product-old-price">₹80.00</span>
+                                    </div>
+                                    <span class="text-success"><small>In Stock (12)</small></span>
+                                </div>
+                            </div>
+                            
+                        </div>
                     </div>
                 </div>
-                
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Organic Carrots">
-                        <div class="product-badge">Sale</div>
-                        <div class="product-actions">
-                            <button class="product-action-btn"><i class="fas fa-heart"></i></button>
-                            <button class="product-action-btn"><i class="fas fa-eye"></i></button>
-                            <button class="product-action-btn"><i class="fas fa-exchange-alt"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Vegetables</span>
-                        <h3 class="product-title">Organic Carrots</h3>
-                        <div class="product-price">
-                            <span class="current-price">₹1.99</span>
-                            <span class="old-price">₹2.49</span>
-                        </div>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </div>
-                        <button class="add-to-cart"  onclick="location.href='cart.html'">
-                            <i class="fas fa-shopping-cart"></i> Add to Cart
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1603569283847-aa295f0d016a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Orange Juice">
-                        <div class="product-actions">
-                            <button class="product-action-btn"><i class="fas fa-heart"></i></button>
-                            <button class="product-action-btn"><i class="fas fa-eye"></i></button>
-                            <button class="product-action-btn"><i class="fas fa-exchange-alt"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Juices</span>
-                        <h3 class="product-title">Fresh Orange Juice</h3>
-                        <div class="product-price">
-                            <span class="current-price">₹4.99</span>
-                        </div>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <button class="add-to-cart"  onclick="location.href='cart.html'">
-                            <i class="fas fa-shopping-cart"></i> Add to Cart
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Organic Milk">
-                        <div class="product-badge">New</div>
-                        <div class="product-actions">
-                            <button class="product-action-btn"><i class="fas fa-heart"></i></button>
-                            <button class="product-action-btn"><i class="fas fa-eye"></i></button>
-                            <button class="product-action-btn"><i class="fas fa-exchange-alt"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Dairy</span>
-                        <h3 class="product-title">Organic Milk</h3>
-                        <div class="product-price">
-                            <span class="current-price">₹3.49</span>
-                        </div>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                        <button class="add-to-cart"  onclick="location.href='cart.html'">
-                            <i class="fas fa-shopping-cart"></i> Add to Cart
-                        </button>
-                    </div>
+                <div class="text-center mt-4">
+                    <a href="juices.html" class="btn btn-outline-primary">View All Juices</a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
         <!-- Features Section -->
     <section class="features">
